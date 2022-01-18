@@ -16,3 +16,17 @@ footer{
 	bottom:0px; 
 }
 
+#callToAction{
+    text-align: center;
+    margin-top: 5rem;
+}
+
+#register2{
+    color: white;
+    background-color: #5085A5;   
+    
+}
+
+#register2:hover{
+    opacity: 0.8;
+}
