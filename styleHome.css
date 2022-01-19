@@ -1,11 +1,15 @@
 body{
-    
     min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    
 }
 html{
     position: relative;
 }
-
+header {
+    background-color: #5085A5;
+    font-size: 15px;
+}
 footer{
     background-color: #5085A5;
     padding: 2.2em 2.2em;
