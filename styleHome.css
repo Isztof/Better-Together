@@ -1,0 +1,36 @@
+body{
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    
+}
+html{
+    position: relative;
+}
+header {
+    background-color: #5085A5;
+    font-size: 15px;
+}
+footer{
+    background-color: #5085A5;
+    padding: 2.2em 2.2em;
+    width: 100%;
+    bottom: 0;
+    font-size: 10px;
+    position: absolute;
+	bottom:0px; 
+}
+
+#callToAction{
+    text-align: center;
+    margin-top: 5rem;
+}
+
+#register2{
+    color: white;
+    background-color: #5085A5;   
+    
+}
+
+#register2:hover{
+    opacity: 0.8;
+}
