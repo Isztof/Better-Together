@@ -10,6 +10,22 @@ header {
     background-color: #5085A5;
     font-size: 15px;
 }
+
+main { width:200 px; 
+    height: 200 px; 
+    padding: 20px 70px 20px 70px;
+    margin: 20px;
+    margin-left: 50px;
+}
+
+#title {
+    border: 1.5px solid #5085A5;
+}
+
+#comment{
+    border: 1.5px solid #5085A5;
+}
+
 footer{
     background-color: #5085A5;
     padding: 2.2em 2.2em;
@@ -18,19 +34,4 @@ footer{
     font-size: 10px;
     position: absolute;
 	bottom:0px; 
-}
-
-#callToAction{
-    text-align: center;
-    margin-top: 5rem;
-}
-
-#register2{
-    color: white;
-    background-color: #5085A5;   
-    
-}
-
-#register2:hover{
-    opacity: 0.8;
 }
