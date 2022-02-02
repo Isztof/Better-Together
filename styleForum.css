@@ -15,7 +15,7 @@ footer{
     width: 100%;
     max-height: 300px;
     bottom: 0;
-    font-size: 10px;
+    font-size: 13px;
     position: absolute;
 	bottom:0px; 
     
@@ -43,7 +43,7 @@ main{
 
 .frame {
     width: 60%;
-    height: 400px;
+    height: 100%;
     background-color: white;
     text-align: center;
     margin: 0  auto;
@@ -52,6 +52,7 @@ main{
     border-radius: 16px;
     justify-content: center;
     display: grid;
+    overflow:auto;
 
 }
 
@@ -108,7 +109,8 @@ main{
 }
 
 .noteDescription{
-    height: 100px;
+    height: 100%;
+    overflow: auto;
     padding-left: 10%;
     padding-right: 10%;
 }
