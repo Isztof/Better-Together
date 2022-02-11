@@ -105,6 +105,7 @@ section{
     display: grid;
     overflow:auto;
     padding-top: 10px;
+    position: relative;
 
 }
 
@@ -210,3 +211,90 @@ section{
     transition: 0.4s;
 }
 
+.panel {
+    background-color: white;
+    display: block;
+    overflow:auto;
+    height: 100%;
+    width: 100%;
+    position: relative;
+   /* display: grid; */
+  }
+
+  .commentLine input {
+      width: 75%;
+      height: 100%;
+  }
+
+  .commentLine button {
+      background-color: #5085A5;
+      color: white;
+      margin-left: 15px;
+      margin-bottom: 31px;
+      height: 39px;
+  }
+  .commentLine{
+      bottom: 0;
+      position: relative;
+      padding-top: 20px;
+      min-height: 50px;
+    
+  }
+
+  .comments {
+      min-height: 60px;
+      position: relative;
+      width: 80%;
+      padding-left: 10%;
+  }
+
+  .comment{
+     
+      min-height: 100px;
+      height: 100%;
+      width: 100%;
+      min-width: 900px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      text-align: left;
+      margin-left: 10px;
+
+  }
+
+  .commentText {
+      padding-left: 20px;
+      padding-top: 17px;
+      font-size: 15px;
+      width: 93.5%;
+      margin-left: 50px;
+      max-width: 850px;
+      position: relative;
+  }
+
+  .wide{
+      width: 1200px;
+      
+  }
+
+  .commentAuthor {
+      padding-top: 10px;
+      padding-left: 18px;
+      font-weight: bold;
+      font-size: 20px;
+  }
+
+  textarea {
+      width: 75%;
+      height: 39px;
+      padding: 10px;
+      outline: none;
+      resize: none;
+      border-radius: 5px solid;
+      font-size: 16px;
+      margin-top: 20px;
+
+  }
+
+  textarea::-webkit-scrollbar{
+    width: 0px;
+  } 
