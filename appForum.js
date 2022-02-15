@@ -26,14 +26,14 @@ function showPanel(element) {
   }
 }
 
-var comInput = document.querySelector(".areaT");
-
 // adding new comments to the comment panel
 
-function addComment() {
+function addComment(element) {
   //alert("I work!");
   var comment = document.createElement("div");
   comment.className = "comment";
+  var comInput = document.querySelector(`#${element} .areaT`);
+  console.log(element);
   let inputValue = comInput.value;
   // var t = document.createTextNode(inputValue);
   // comment.appendChild(t);
@@ -49,7 +49,7 @@ function addComment() {
   if (inputValue === "") {
     alert("You cannot post an empty comment!");
   } else {
-    var commentsSection = document.querySelector(".comments");
+    var commentsSection = document.querySelector(`#${element} .comments`);
     commentsSection.appendChild(comment);
   }
 }
@@ -79,7 +79,6 @@ function addingPost() {
    </div>
     `;
   console.log(postTitle);
-  id++;
   if (postTitle === "") {
     alert("Your Post has to have a Title!");
   } else if (postDescription === "") {
@@ -106,8 +105,9 @@ function addingPost() {
   comPanel.appendChild(commentS);
   comPanel.innerHTML = `
   <div class="comments"> </div> 
-   <span class="commentLine">  <textarea class="areaT" placeholder="Type in your comment"></textarea><button type="submit" onclick="addComment()"  class="btn btn-info btn-sm shadow-none text-left" >Comment</button> </span>
+   <span class="commentLine">  <textarea id="'${`post${id}`}' " onfocus="resizerSelector('${`post${id}`}')" class="areaT" placeholder="Type in your comment"></textarea><button type="submit" onclick="addComment('${`post${id}`}')"  class="btn btn-info btn-sm shadow-none text-left" >Comment</button> </span>
    `;
+  id++;
 
   // commentB.addEventListener("click", showPanel);
   //  addComB.addEventListener("click", addComment);
@@ -120,11 +120,18 @@ function addingPost() {
 postB.addEventListener("click", addingPost);
 
 // comment input resizer
-/*
-const textArea = document.querySelector(".areaT");
-textArea.addEventListener("keyup", e =>{
-  let scHeight = e.target.scrollHeight;
-  console.log(scHeight);
-  textArea.style.height = `${scHeight}px`
-});
-*/
+
+//var textAreaTBR;
+
+function resizerSelector(element) {
+  var textArea = document.querySelector(`#${element} .areaT`);
+  textAreaTBR = textArea;
+
+  textAreaTBR.addEventListener("keyup", (e) => {
+    let scHeight = e.target.scrollHeight;
+    console.log(scHeight);
+    textArea.style.height = `${scHeight}px`;
+  });
+}
+
+//console.log(element);
