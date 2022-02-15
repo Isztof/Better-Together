@@ -8,6 +8,24 @@ html {
   background-color: #e9f3f1;
 }
 
+#LRPanel {
+  text-align: right;
+  padding-top: 15px;
+}
+
+#header {
+  text-align: right;
+  background-color: #5085a5;
+}
+#LB,
+#RB {
+  max-width: 100px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 0.5em;
+}
+
 footer {
   background-color: #5085a5;
   padding: 2.2em 2.2em;
@@ -106,6 +124,7 @@ section {
 
 .authorDateTag {
   text-align: left;
+  width: 100%;
 }
 
 .picture {
@@ -123,7 +142,8 @@ section {
   margin-left: 30px;
   padding-left: 30px;
   margin-top: 5px;
-  width: 150px;
+  width: 30%;
+  position: relative;
 }
 
 .dateTag {
@@ -131,13 +151,12 @@ section {
   font-size: medium;
   margin-left: 30px;
   padding-left: 30px;
-  width: 200px;
+  width: 20%;
 }
 
 .noteTitle {
   padding-top: 10px;
-  min-width: 600px;
-  max-width: 800px;
+  text-align: center;
   margin: 0 auto;
 }
 
@@ -169,7 +188,6 @@ section {
 .commentBtn {
   font-weight: bold;
   padding: 1rem 5rem;
-  margin-left: 18px;
   color: grey;
   cursor: pointer;
   text-align: center;
@@ -311,4 +329,57 @@ section {
 
 textarea::-webkit-scrollbar {
   width: 0px;
+}
+
+@media (max-width: 1800px) {
+  .frame {
+    display: block;
+  }
+  .postBtns {
+    display: block;
+  }
+
+  .authorDateTag {
+    text-align: left;
+    width: 100%;
+  }
+  .noteDescription {
+    min-width: 800px;
+  }
+  .noteTitle {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1600px) {
+  .noteDescription {
+    min-width: none;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1350px) {
+  .noteDescription {
+    min-width: 0px;
+    max-width: 600px;
+  }
+  .dateTag {
+    font-size: medium;
+    width: 50%;
+  }
+}
+
+@media (max-width: 940px) {
+  .commentBtn {
+    padding: 0.7rem 2.5rem;
+    margin-top: 0.1rem;
+  }
+  .repButton {
+    padding: 0.75rem 2.9rem;
+    margin-top: 0.1rem;
+  }
+  .authorTag {
+    width: 50%;
+  }
 }
