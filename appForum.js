@@ -66,8 +66,9 @@ function addingPost() {
      <div class="noteDescription"> ${postDescription} </div>
     <div class="postBtns">
        <button onclick="showPanel('${`post${id}`}')"  class="commentBtn"> Comment</button> 
-       
-       <button class="repButton">Report</button> 
+       <form action="reportPost/reportPost.html">
+         <button class="repButton">Report</button> 
+       </form>   
    </div>
     `;
   console.log(postTitle);
