@@ -6,16 +6,11 @@ var postTitleInput = document.querySelector("#title");
 var postDescriptionInput = document.querySelector("#comment");
 const commentB = document.querySelector(".commentBtn");
 const addComB = document.querySelector(".commentLine button");
-
 var commentsSection = document.querySelector(".comments");
 
 var id = 0;
-
 // open the panel function
 function showPanel(element) {
-  // alert("I work");
-
-  console.log(element.parentElement);
   let panel = document.querySelector(`#${element} .panel`);
   console.log(panel);
   panel.className = "panel";
@@ -27,7 +22,6 @@ function showPanel(element) {
 }
 
 // adding new comments to the comment panel
-
 function addComment(element) {
   //alert("I work!");
   var comment = document.createElement("div");
@@ -40,7 +34,6 @@ function addComment(element) {
   comment.innerHTML = `
         <span class="wide"><img class="picture" src="imgs/50x50picture.png"> <span class="commentAuthor">Mike Miller </span> </span>
         <div class="commentText"> ${inputValue} </div> 
-
       `;
   /*
       let comText = document.querySelector(".commentText");
@@ -62,7 +55,6 @@ function addingPost() {
   frame.className = "frame";
   frame.id = `post${id}`;
   frame.innerHTML = ` 
-
     <div class="authorDateTag">
     <img class="picture" src="imgs/50x50picture.png" alt="">
     <!-- <div class="picture" ></div> -->
@@ -85,18 +77,9 @@ function addingPost() {
     alert("Your post has to have a Description!");
   } else {
     main.appendChild(frame);
-    //titleHtml.innerHTML = postTitle;
   }
   // Comments section
 
-  // comment panel
-  /*
-    comPanel = document.createElement("div");
-    panel.className = "panel";
-    frame.appendChild(comPanel);
-    */
-
-  //
   comPanel = document.createElement("div");
   comPanel.className = "panel";
   frame.appendChild(comPanel);
@@ -113,15 +96,11 @@ function addingPost() {
   //  addComB.addEventListener("click", addComment);
 }
 
-//const frame = document.querySelector(".frame");
-
 // appending the adding new post function to a button
 
 postB.addEventListener("click", addingPost);
 
 // comment input resizer
-
-//var textAreaTBR;
 
 function resizerSelector(element) {
   var textArea = document.querySelector(`#${element} .areaT`);
@@ -133,5 +112,3 @@ function resizerSelector(element) {
     textArea.style.height = `${scHeight}px`;
   });
 }
-
-//console.log(element);

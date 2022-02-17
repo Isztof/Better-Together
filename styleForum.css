@@ -24,7 +24,7 @@ html {
   color: white;
   font-size: 15px;
   text-decoration: none;
-  padding: 0.5em;
+  padding: 0.5em; 
 }
 
 footer {
@@ -37,6 +37,7 @@ footer {
   position: absolute;
   bottom: 0px;
 }
+
 
 #postB {
   color: white;
@@ -67,6 +68,7 @@ footer {
   margin: 0 auto;
 }
 
+
 header {
   background-color: #5085a5;
   font-size: 15px;
@@ -80,6 +82,7 @@ main {
   min-height: 80vh;
   padding-top: 45px;
 }
+
 
 #title {
   border: 1.5px solid #5085a5;
@@ -127,6 +130,15 @@ section {
   text-align: left;
   width: 100%;
 }
+.picture{
+    width: 50px;
+    height: 50px;
+    background-color: grey ;
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
 
 .picture {
   width: 50px;
