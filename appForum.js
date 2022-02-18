@@ -47,6 +47,14 @@ function addComment(element) {
   }
 }
 
+function readMore(element) {
+  let spanToShow = document.querySelector(`#${element} .secondPart`);
+  let spanToHide = document.querySelector(`#${element} .readMoreTag`);
+  spanToShow.style.display = "inline-block";
+  spanToHide.remove();
+  //spanToHide.style.display = "none";
+}
+
 // Adding a new post function
 function addingPost() {
   let postTitle = postTitleInput.value;
@@ -54,7 +62,21 @@ function addingPost() {
   let frame = document.createElement("div");
   frame.className = "frame";
   frame.id = `post${id}`;
-  frame.innerHTML = ` 
+  //Creating a span out of each word
+  console.log(postDescription.length);
+  let addReadMore = false;
+  var secondSpan;
+
+  if (postDescription.length > 1550) {
+    const firstSpan = postDescription.substring(0, 1550);
+    secondSpan = postDescription.substring(1550, postDescription.length);
+    postDescription = firstSpan;
+    addReadMore = true;
+    // postDescription.innerHTML += `<a>...Read more</a>`;
+  }
+
+  if (addReadMore) {
+    frame.innerHTML = ` 
     <div class="authorDateTag">
     <img class="picture" src="imgs/50x50picture.png" alt="">
     <!-- <div class="picture" ></div> -->
@@ -62,8 +84,7 @@ function addingPost() {
      <div class="dateTag">27.01.2021 21:49</div>
      <h4 class="noteTitle" > ${postTitle}</h4> 
    </div>
-  
-     <div class="noteDescription"> ${postDescription} </div>
+     <div class="noteDescription"> <span> ${postDescription} </span> <span class="readMoreTag" onclick="readMore('${`post${id}`}')">...Read more</span> <span class="secondPart">${secondSpan}</span></div> 
     <div class="postBtns">
        <button onclick="showPanel('${`post${id}`}')"  class="commentBtn"> Comment</button> 
        <form action="reportPost/reportPost.html">
@@ -71,6 +92,25 @@ function addingPost() {
        </form>   
    </div>
     `;
+  } else {
+    frame.innerHTML = ` 
+    <div class="authorDateTag">
+    <img class="picture" src="imgs/50x50picture.png" alt="">
+    <!-- <div class="picture" ></div> -->
+     <div class="authorTag">John Doe</div>
+     <div class="dateTag">27.01.2021 21:49</div>
+     <h4 class="noteTitle" > ${postTitle}</h4> 
+   </div>
+     <div class="noteDescription">  ${postDescription}  </div> 
+    <div class="postBtns">
+       <button onclick="showPanel('${`post${id}`}')"  class="commentBtn"> Comment</button> 
+       <form action="reportPost/reportPost.html">
+         <button class="repButton">Report</button> 
+       </form>   
+   </div>
+    `;
+  }
+
   console.log(postTitle);
   if (postTitle === "") {
     alert("Your Post has to have a Title!");
@@ -95,8 +135,10 @@ function addingPost() {
 
   // commentB.addEventListener("click", showPanel);
   //  addComB.addEventListener("click", addComment);
-}
 
+  // Read more/read less with if logic
+  // alternative solution
+}
 // appending the adding new post function to a button
 
 postB.addEventListener("click", addingPost);
@@ -110,6 +152,6 @@ function resizerSelector(element) {
   textAreaTBR.addEventListener("keyup", (e) => {
     let scHeight = e.target.scrollHeight;
     console.log(scHeight);
-    textArea.style.height = `${scHeight}px`;
+    // textArea.style.height = `${scHeight}px`;
   });
 }
