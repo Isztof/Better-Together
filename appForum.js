@@ -55,6 +55,10 @@ function readMore(element) {
   //spanToHide.style.display = "none";
 }
 
+// going to report post UI
+function reportUI() {
+  window.location.href = "reportPost/reportPost.html";
+}
 // Adding a new post function
 function addingPost() {
   let postTitle = postTitleInput.value;
@@ -87,9 +91,7 @@ function addingPost() {
      <div class="noteDescription"> <span> ${postDescription} </span> <span class="readMoreTag" onclick="readMore('${`post${id}`}')">...Read more</span> <span class="secondPart">${secondSpan}</span></div> 
     <div class="postBtns">
        <button onclick="showPanel('${`post${id}`}')"  class="commentBtn"> Comment</button> 
-       <form action="reportPost/reportPost.html">
-         <button class="repButton">Report</button> 
-       </form>   
+        <button onclick="reportUI()" class="repButton">Report</button>   
    </div>
     `;
   } else {
@@ -104,9 +106,7 @@ function addingPost() {
      <div class="noteDescription">  ${postDescription}  </div> 
     <div class="postBtns">
        <button onclick="showPanel('${`post${id}`}')"  class="commentBtn"> Comment</button> 
-       <form action="reportPost/reportPost.html">
-         <button class="repButton">Report</button> 
-       </form>   
+       <button onclick="reportUI()" class="repButton">Report</button>  
    </div>
     `;
   }
