@@ -1,212 +1,406 @@
-body{
-    
-    min-height: 100vh;
-    font-family: 'Roboto', sans-serif;
-    background-color: #e9f3f1;
+body {
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: #e9f3f1;
 }
-html{
-    position: relative;
-    background-color: #e9f3f1;
-}
-
-footer{
-    background-color: #5085A5;
-    padding: 2.2em 2.2em;
-    width: 100%;
-    max-height: 300px;
-    bottom: 0;
-    font-size: 13px;
-    position: absolute;
-	bottom:0px; 
-    
+html {
+  position: relative;
+  background-color: #e9f3f1;
 }
 
-#postB{
-    color: white;
-    background-color: #5085A5;   
-    margin-top: 10px;
-    position: relative;
-    text-align: left;
-    
+#LRPanel {
+  text-align: right;
+  padding-top: 15px;
+  padding-bottom: 1.2em;
 }
 
-#postQ{
-    color: white;
-    background-color: #5085A5;   
-    margin-top: 30px;
-    position: relative;
-    text-align: center; 
+#header {
+  text-align: right;
+  background-color: #5085a5;
+}
+#LB,
+#RB {
+  max-width: 100px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 0.5em;
 }
 
+footer {
+  background-color: #5085a5;
+  padding: 2.2em 2.2em;
+  width: 100%;
+  max-height: 300px;
+  bottom: 0;
+  font-size: 13px;
+  position: absolute;
+  bottom: 0px;
+}
+
+#postB {
+  color: white;
+  background-color: #5085a5;
+  margin-top: 10px;
+  position: relative;
+  text-align: left;
+  transition: 0.6s;
+}
+
+#postQ {
+  color: white;
+  background-color: #5085a5;
+  margin-top: 30px;
+  position: relative;
+  text-align: center;
+}
 
 #title {
-    border: 1.5px solid #5085A5;
-    max-width: 800px;
-    margin: 0 auto;
+  border: 1.5px solid #5085a5;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-#comment{
-    border: 1.5px solid #5085A5;
-    max-width: 800px;
-    margin: 0 auto;
+#comment {
+  border: 1.5px solid #5085a5;
+  max-width: 800px;
+  margin: 0 auto;
 }
-
 
 header {
-    background-color: #5085A5;
-    font-size: 15px;
+  background-color: #5085a5;
+  font-size: 15px;
 }
 
-main{
-    text-align: center;
-    justify-content: center;
-    background-color: #e9f3f1;
-    padding-bottom: 180px;
-    min-height: 80vh;
-    padding-top: 45px;
+main {
+  text-align: center;
+  justify-content: center;
+  background-color: #e9f3f1;
+  padding-bottom: 180px;
+  min-height: 80vh;
+  padding-top: 45px;
 }
 
 #title {
-    border: 1.5px solid #5085A5;
-    width: 60%;
-    margin: 0 auto;
+  border: 1.5px solid #5085a5;
+  width: 60%;
+  margin: 0 auto;
 }
 
-#comment{
-    border: 1.5px solid #5085A5;
-    width: 60%;
-    margin: 0 auto;
+#comment {
+  border: 1.5px solid #5085a5;
+  width: 60%;
+  margin: 0 auto;
 }
 
-footer{
-    background-color: #5085A5;
-    padding: 2.2em 2.2em;
-    width: 100%;
-    bottom: 0;
-    font-size: 12.5px;
-    position: absolute;
-	bottom:0px; 
+footer {
+  background-color: #5085a5;
+  padding: 2.2em 2.2em;
+  width: 100%;
+  bottom: 0;
+  font-size: 12.5px;
+  position: absolute;
+  bottom: 0px;
 }
 
-section{
-    width: 60%;
-    margin: 0 auto;
+section {
+  width: 60%;
+  margin: 0 auto;
 }
 
 .frame {
-    width: 60%;
-    height: 100%;
-    background-color: white;
-    text-align: center;
-    margin: 0  auto;
-    margin-top: 80px;
-    border-radius: 16px;
-    justify-content: center;
-    display: grid;
-    overflow:auto;
-    padding-top: 10px;
-
+  width: 60%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
+  border-radius: 16px;
+  justify-content: center;
+  display: grid;
+  overflow: auto;
+  padding-top: 10px;
+  position: relative;
 }
 
+.authorDateTag {
+  text-align: left;
+  width: 100%;
+}
+.picture {
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+}
 
-.authorDateTag{
+.picture {
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.authorTag {
+  font-weight: bold;
+  font-size: large;
+  margin-left: 30px;
+  padding-left: 30px;
+  margin-top: 5px;
+  width: 30%;
+  position: relative;
+}
+
+.dateTag {
+  font-weight: 300;
+  font-size: medium;
+  margin-left: 30px;
+  padding-left: 30px;
+  width: 20%;
+}
+
+.noteTitle {
+  padding-top: 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.postBtns {
+  display: grid;
+  grid-template-columns: 47% 47%;
+  grid-gap: 3%;
+  height: 60px;
+  bottom: 0px;
+  position: relative;
+  margin-bottom: 0px;
+  margin-top: 75px;
+  border-top: 1px solid grey;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 75px;
+}
+
+.noteDescription {
+  margin-top: 10px;
+  height: 100%;
+  overflow: auto;
+  padding-left: 10%;
+  padding-right: 10%;
+  min-width: 1100px;
+}
+
+.commentBtn {
+  font-weight: bold;
+  padding: 1rem 5rem;
+  color: grey;
+  cursor: pointer;
+  text-align: center;
+  justify-content: left;
+  border-radius: 12px;
+  background-color: white;
+  border: none;
+  transition: 0.4s;
+}
+.repButton {
+  font-weight: bold;
+  padding: 1rem 5rem;
+  color: grey;
+  cursor: pointer;
+  text-align: center;
+  margin-right: 0px;
+  border-radius: 12px;
+  margin-bottom: 0.1rem;
+  align-self: stretch;
+  background-color: white;
+  border: none;
+  transition: 0.4s;
+}
+
+.repButton:hover {
+  background-color: rgb(226, 221, 221);
+  transition: 0.4s;
+}
+.commentBtn:hover {
+  background-color: rgb(226, 221, 221);
+  transition: 0.4s;
+}
+
+.panel {
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.commentLine input {
+  width: 75%;
+  height: 100%;
+}
+
+#postB:hover {
+  transition: 0.6s;
+  opacity: 0.8;
+}
+
+.commentLine button {
+  background-color: #5085a5;
+  color: white;
+  margin-left: 15px;
+  margin-bottom: 31px;
+  height: 39px;
+  color: white;
+  background-color: #5085a5;
+  transition: 0.6s;
+}
+.commentLine button:hover {
+  background-color: #5085a5;
+  color: white;
+  opacity: 0.8;
+  transition: 0.6s;
+}
+.commentLine button:active {
+  background-color: #5085a5;
+  color: white;
+}
+.commentLine button:visited {
+  background-color: #5085a5;
+  color: white;
+}
+
+.commentLine button:focus {
+  background-color: #5085a5;
+  color: white;
+}
+
+.commentLine {
+  bottom: 0;
+  position: relative;
+  padding-top: 20px;
+  min-height: 50px;
+}
+
+.comments {
+  min-height: 60px;
+  position: relative;
+  width: 80%;
+  padding-left: 10%;
+}
+
+.comment {
+  min-height: 100px;
+  height: 100%;
+  width: 100%;
+  min-width: 900px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.commentText {
+  padding-left: 20px;
+  padding-top: 17px;
+  font-size: 15px;
+  width: 93.5%;
+  margin-left: 50px;
+  max-width: 850px;
+  position: relative;
+}
+
+.wide {
+  width: 1200px;
+}
+
+.commentAuthor {
+  padding-top: 10px;
+  padding-left: 18px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.commentLine textarea {
+  width: 75%;
+  height: 39px;
+  padding: 10px;
+  outline: none;
+  resize: none;
+  border-radius: 5px solid;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0px;
+}
+
+.secondPart {
+  display: none;
+}
+
+.readMoreTag {
+  display: inline-block;
+  cursor: pointer;
+}
+
+@media (max-width: 1800px) {
+  .frame {
+    display: block;
+  }
+  .postBtns {
+    display: block;
+  }
+
+  .authorDateTag {
     text-align: left;
-  
+    width: 100%;
+  }
+  .noteDescription {
+    min-width: 800px;
+  }
+  .noteTitle {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .comment {
+    min-width: 0px;
+  }
 }
 
-.picture{
-    width: 50px;
-    height: 50px;
-    background-color: grey ;
-    float: left;
-    margin-left: 5px;
-    margin-top: 5px;
+@media (max-width: 1600px) {
+  .noteDescription {
+    min-width: none;
+    text-align: center;
+  }
 }
 
-.authorTag{
-    font-weight: bold;
-    font-size: large;
-    margin-left: 30px;
-    padding-left: 30px;
-    margin-top: 5px;
-    width: 150px;
-}
-
-.dateTag{
-    font-weight: 300;
+@media (max-width: 1350px) {
+  .noteDescription {
+    min-width: 0px;
+    max-width: 600px;
+  }
+  .dateTag {
     font-size: medium;
-    margin-left: 30px;
-    padding-left: 30px;
-    width: 200px;
+    width: 50%;
+  }
 }
 
-.noteTitle{
-    padding-top: 10px;
-    min-width: 600px;
-    max-width: 800px;
-    margin:0 auto;
+@media (max-width: 940px) {
+  .commentBtn {
+    padding: 0.7rem 2.5rem;
+    margin-top: 0.1rem;
+  }
+  .repButton {
+    padding: 0.75rem 2.9rem;
+    margin-top: 0.1rem;
+  }
+  .authorTag {
+    width: 50%;
+  }
 }
-
-.postBtns{
-    display: grid;
-    grid-template-columns: 47% 47%;
-    grid-gap: 3%;
-    height: 60px;
-    bottom: 0px;
-    position: relative;
-    margin-bottom: 0px;
-    margin-top: 75px;
-    border-top: 1px solid grey;
-    width: 80%;
-    text-align: center;
-    margin:0 auto;
-    margin-top: 75px; 
-}
-
-.noteDescription{
-    margin-top: 10px;
-    height: 100%;
-    overflow: auto;
-    padding-left: 10%;
-    padding-right: 10%;
-    min-width: 1100px;
-}
-
-.commentBtn{
-    font-weight: bold;       
-    padding: 1rem 5rem;
-    margin-left: 18px;
-    color: grey;
-    cursor: pointer;
-    text-align: center;
-    justify-content: left;
-    border-radius: 12px;
-    background-color: white;
-    border: none;
-    transition: 0.4s;
-
-}
-.repButton{
-    font-weight: bold;       
-    padding: 1rem 5rem;
-    color: grey;
-    cursor: pointer;
-    text-align: center;
-    margin-right: 0px;
-    border-radius: 12px;
-    margin-bottom: 0.1rem;
-    align-self: stretch;
-    background-color: white;
-    border: none;
-    transition: 0.4s;
-}
-
-.repButton:hover{
-    background-color: rgb(226, 221, 221);
-    transition: 0.4s;
-}
-.commentBtn:hover{
-    background-color: rgb(226, 221, 221);
-    transition: 0.4s;
-}
-
