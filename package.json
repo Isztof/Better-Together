@@ -1,5 +1,23 @@
 {
   "dependencies": {
-    "@supabase/supabase-js": "^1.30.6"
-  }
+    "@supabase/supabase-js": "^1.30.7",
+    "dotenv": "^16.0.0"
+  },
+  "name": "better-together",
+  "description": "",
+  "version": "1.0.0",
+  "main": "Registration.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/better-together-net/Better-Together.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/better-together-net/Better-Together/issues"
+  },
+  "homepage": "https://github.com/better-together-net/Better-Together#readme"
 }
