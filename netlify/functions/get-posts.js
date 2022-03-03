@@ -1,7 +1,7 @@
 require("dotenv").config();
-const { SUPABASE_URL, SUPABASE_ANON_KEY } = process.env;
+const { SUPABASE_URL, SUPABASE_KEY } = process.env;
 const { createClient } = require("@supabase/supabase-js");
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 exports.handler = async (event) => {
   const { data, error } = await supabase.from("post").select("*");
