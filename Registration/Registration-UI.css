@@ -1,0 +1,125 @@
+body {
+  min-height: 100vh;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: #e9f3f1;
+}
+html {
+  position: relative;
+  background-color: #e9f3f1;
+}
+
+#LRPanel {
+  text-align: right;
+  padding-top: 15px;
+  padding-bottom: 1.2em;
+}
+
+#header {
+  text-align: right;
+  background-color: #5085a5;
+}
+#LB,
+#RB {
+  max-width: 100px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+#navbarNav {
+  text-align: left;
+  color: green;
+  justify-content: end;
+}
+#navbarUL {
+  text-align: left;
+}
+
+#main {
+  padding-top: 70px;
+  min-height: 145vh;
+  height: 100%;
+}
+#postB {
+  color: white;
+  background-color: #5085a5;
+  margin-top: 10px;
+  position: relative;
+  text-align: left;
+  transition: 0.6s;
+}
+
+label {
+  padding-top: 25px;
+}
+
+#firstLabel {
+  padding-top: 5px;
+}
+
+input[type="checkbox"] {
+  margin-top: 30px;
+}
+
+#check1,
+#check2 {
+  padding-left: 0px;
+}
+
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "X";
+}
+
+footer {
+  background-color: #5085a5;
+  padding: 2.2em 2.2em;
+  width: 100%;
+  max-height: 300px;
+  bottom: 0;
+  font-size: 12.5px;
+  position: absolute;
+  bottom: 0px;
+}
+
+/* password consistency validation */
+#consistency {
+  display: none;
+  background: #f1f1f1;
+  position: relative;
+  padding: 0px 55px;
+  font-size: 19px;
+}
