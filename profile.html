@@ -94,24 +94,84 @@
             <div>
                 <h4 class="text-uppercase">Work Experience</h4>
                 <hr>
-
-                <ul class="list">
-                    <li class="list-item">
-                        <h5 class="display-6 text-uppercase">Psychologist</h5>
-                        <h6 class="text-uppercase text-black-50">Company Name/Year</h6>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic rerum, at, maxime est molestiae tempore eius, 
-                            cum animi quibusdam vero autem assumenda quod rem! Expedita cumque dignissimos labore voluptatum eum!</p>
-                    </li>
-                    <li class="list-item">
-                        <h5 class="display-6 text-uppercase">Psychologist</h5>
-                        <h6 class="text-uppercase text-black-50">Company Name/Year</h6>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic rerum, at, maxime est molestiae tempore eius, 
-                            </p>
+                <div id="myDIV" class="header">
+                    <h2 style="margin:5px">My Experiences</h2>
+                    <div class="form-group col-md-6">
+                    <input type="text" id="myInput" placeholder="Text...">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                </div>
+                  <ul id="myUL">
+                    <li>
+                        02.2010 -07.2014 Head Psychologist at the Heinrich-Heine-University in Düsseldorf</li>
+                    <li class="checked">10.2014-07.2018 Head Psychologist at Bochum University </li>
+                    <li>09.2018-07.2021 Head Psychologist at Berlin University</li>
+                    <li>08.2021-ongoing Head Psychologist at Goethe University</li>
+                  </ul>
+                  
+                  <script>
+                  // Create a "close" button and append it to each list item
+                  var myNodelist = document.getElementsByTagName("LI");
+                  var i;
+                  for (i = 0; i < myNodelist.length; i++) {
+                    var span = document.createElement("SPAN");
+                    var txt = document.createTextNode("\u00D7");
+                    span.className = "close";
+                    span.appendChild(txt);
+                    myNodelist[i].appendChild(span);
+                  }
+                  
+                  // Click on a close button to hide the current list item
+                  var close = document.getElementsByClassName("close");
+                  var i;
+                  for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function() {
+                      var div = this.parentElement;
+                      div.style.display = "none";
+                    }
+                  }
+                  
+                  // Add a "checked" symbol when clicking on a list item
+                  var list = document.querySelector('ul');
+                  list.addEventListener('click', function(ev) {
+                    if (ev.target.tagName === 'LI') {
+                      ev.target.classList.toggle('checked');
+                    }
+                  }, false);
+                  
+                  //Create a new list item when clicking on the "Add" button
+                  function newElement() {
+                    var li = document.createElement("li");
+                    var inputValue = document.getElementById("myInput").value;
+                    var t = document.createTextNode(inputValue);
+                    li.appendChild(t);
+                    if (inputValue === '') {
+                      alert("You must write something!");
+                    } else {
+                      document.getElementById("myUL").appendChild(li);
+                    }
+                    document.getElementById("myInput").value = "";
+                  
+                    var span = document.createElement("SPAN");
+                    var txt = document.createTextNode("\u00D7");
+                    span.className = "close";
+                    span.appendChild(txt);
+                    li.appendChild(span);
+                  
+                    for (i = 0; i < close.length; i++) {
+                      close[i].onclick = function() {
+                        var div = this.parentElement;
+                        div.style.display = "none";
+                      }
+                    }
+                  
+                  </script>
+                
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    
+
 </body>
 </html>
