@@ -4,7 +4,7 @@ const { createClient } = require("@supabase/supabase-js");
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 exports.handler = async (event) => {
-  const { data, error } = await supabase.from("post").select("*");
+  const { data, error } = await supabase.from("posts").select("*");
 
   if (error) {
     return {
