@@ -96,3 +96,10 @@ myInput2.onkeyup = function () {
     document.getElementById("consistency").style.display = "none";
   }
 };
+
+//create a new user account in supabase
+const registerButton = document.querySelector("#postB");
+
+registerButton.addEventListener("click", function () {
+  fetch.post("/netlify/functions/user_profile.js");
+});
