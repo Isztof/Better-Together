@@ -27,6 +27,15 @@ html {
   padding: 0.5em;
 }
 
+#navbarNav {
+  text-align: left;
+  color: green;
+  justify-content: end;
+}
+#navbarUL {
+  text-align: left;
+}
+
 footer {
   background-color: #5085a5;
   padding: 2.2em 2.2em;
@@ -36,4 +45,8 @@ footer {
   font-size: 13px;
   position: absolute;
   bottom: 0px;
+}
+
+#main {
+  padding-top: 80px;
 }

@@ -32,7 +32,7 @@ function addComment(element) {
   // var t = document.createTextNode(inputValue);
   // comment.appendChild(t);
   comment.innerHTML = `
-        <span class="wide"><img class="picture" src="imgs/50x50picture.png"> <span class="commentAuthor">Mike Miller </span> </span>
+        <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor">Mike Miller </span> </span>
         <div class="commentText"> ${inputValue} </div> 
       `;
   /*
@@ -82,7 +82,7 @@ function addingPost() {
   if (addReadMore) {
     frame.innerHTML = ` 
     <div class="authorDateTag">
-    <img class="picture" src="imgs/50x50picture.png" alt="">
+    <img class="picture" src="/imgs/50x50picture.png" alt="">
     <!-- <div class="picture" ></div> -->
      <div class="authorTag">John Doe</div>
      <div class="dateTag">27.01.2021 21:49</div>
@@ -97,7 +97,7 @@ function addingPost() {
   } else {
     frame.innerHTML = ` 
     <div class="authorDateTag">
-    <img class="picture" src="imgs/50x50picture.png" alt="">
+    <img class="picture" src="/imgs/50x50picture.png" alt="">
     <!-- <div class="picture" ></div> -->
      <div class="authorTag">John Doe</div>
      <div class="dateTag">27.01.2021 21:49</div>
