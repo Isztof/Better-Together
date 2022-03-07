@@ -6,14 +6,12 @@ const { DATABASE_URL, SUPABASE_SERVICE_API_KEY } = process.env;
 const { createClient } = require("@supabase/supabase-js");
 const supabase = createClient(DATABASE_URL, SUPABASE_SERVICE_API_KEY);
 // Insert a row
-const { data, error } = await supabase
-  .from("User_Accounts")
-  .insert([
-    {
-      display_name: "Isztof",
-      id: "123",
-      first_name: "Mariusz",
-      last_name: "Seget",
-      password: "Supabase2",
-    },
-  ]);
+const { data, error } = await supabase.from("profile").insert([
+  {
+    display_name: "Isztof",
+    id: "123",
+    first_name: "Mariusz",
+    last_name: "Seget",
+    password: "Supabase2",
+  },
+]);
