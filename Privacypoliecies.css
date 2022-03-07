@@ -1,0 +1,32 @@
+body{
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #8999a3;
+    font-size: 15px;
+    margin: 4rem;
+    padding: 0;
+     border: none;
+
+   
+        
+}
+
+
+h1{
+    text-align: center;
+    
+}
+h2{
+    font-weight: 900;
+    border-left: 5rem;
+
+
+
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
