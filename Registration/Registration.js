@@ -100,10 +100,6 @@ myInput2.onkeyup = function () {
 //create a new user account in supabase
 const registerButton = document.querySelector("#postB");
 
-registerButton.addEventListener("click", function () {
-  fetch.post("/netlify/functions/user_profile.js", user);
-});
-
 const user = {
   id: 123,
   display_name: "Isztof",
@@ -111,3 +107,7 @@ const user = {
   last_name: "Seget",
   password: "Supabase1",
 };
+
+registerButton.addEventListener("click", function () {
+  fetch.post("/netlify/functions/user_profile.js", user);
+});
