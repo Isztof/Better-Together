@@ -101,5 +101,13 @@ myInput2.onkeyup = function () {
 const registerButton = document.querySelector("#postB");
 
 registerButton.addEventListener("click", function () {
-  fetch.post("/netlify/functions/user_profile.js");
+  fetch.post("/netlify/functions/user_profile.js", user);
 });
+
+const user = {
+  id: 123,
+  display_name: "Isztof",
+  first_name: "Mariusz",
+  last_name: "Seget",
+  password: "Supabase1",
+};
