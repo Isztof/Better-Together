@@ -32,7 +32,7 @@ function addComment(element) {
   // var t = document.createTextNode(inputValue);
   // comment.appendChild(t);
   comment.innerHTML = `
-        <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor">Mike Miller </span> </span>
+        <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
         <div class="commentText"> ${inputValue} </div> 
       `;
   /*
@@ -47,6 +47,10 @@ function addComment(element) {
   }
 }
 
+function HPprofile() {
+  window.location.href = "/HPprofile/profile.html";
+}
+
 function readMore(element) {
   let spanToShow = document.querySelector(`#${element} .secondPart`);
   let spanToHide = document.querySelector(`#${element} .readMoreTag`);
@@ -57,7 +61,7 @@ function readMore(element) {
 
 // going to report post UI
 function reportUI() {
-  window.location.href = "reportPost/reportPost.html";
+  window.location.href = "/reportPost/reportPost.html";
 }
 // Adding a new post function
 function addingPost() {

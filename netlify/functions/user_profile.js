@@ -8,4 +8,12 @@ const supabase = createClient(DATABASE_URL, SUPABASE_SERVICE_API_KEY);
 // Insert a row
 const { data, error } = await supabase
   .from("User_Accounts")
-  .insert([{ display_name: "Isztof", id: "123" }]);
+  .insert([
+    {
+      display_name: "Isztof",
+      id: "123",
+      first_name: "Mariusz",
+      last_name: "Seget",
+      password: "Supabase2",
+    },
+  ]);
