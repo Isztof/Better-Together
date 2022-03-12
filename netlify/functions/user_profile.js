@@ -9,6 +9,8 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 exports.handler = async (event) => {
   const body = event.body;
   const { data, error } = await supabase.from("profile").insert(body);
+  // Did it work?
+  console.log(data, error);
 
   if (error) {
     return {
