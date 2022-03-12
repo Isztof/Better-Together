@@ -115,13 +115,13 @@ registerButton.addEventListener("click", function () {
       body: userObject,
     })
       .then((response) => response.json())
-      .then(comsole.log(response));
+      .then(console.log("I don't get what's the point of this log"));
   } catch (error) {
     fetch("/.netlify/functions/user_profile", {
       method: "POST",
       body: userObject,
     })
       .then((response) => response.json())
-      .then(comsole.log(response));
+      .then(console.log("I don't get what's the point of this log"));
   }
 });
