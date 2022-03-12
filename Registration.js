@@ -115,13 +115,13 @@ registerButton.addEventListener("click", function () {
       body: userObject,
     })
       .then((response) => response.json())
-      .then(comsolelog);
+      .then(comsole.log);
   } catch (error) {
     fetch("/.netlify/functions/user_profile", {
       method: "POST",
       body: userObject,
     })
       .then((response) => response.json())
-      .then(comsolelog);
+      .then(comsole.log);
   }
 });
