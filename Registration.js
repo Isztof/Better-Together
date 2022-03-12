@@ -109,8 +109,18 @@ const userObject = {
 };
 
 registerButton.addEventListener("click", function () {
-  fetch("/netlify/functions/user_profile.js", {
-    method: "POST",
-    body: userObject,
-  });
+  try {
+    fetch("//netlify/functions/user_profile.js", {
+      method: "POST",
+      body: userObject,
+    });
+  } catch (error) {
+    fetch(
+      "https://bettter-together-net.netlify.app/netlify/functions/get-posts.js",
+      {
+        method: "POST",
+        body: userObject,
+      }
+    );
+  }
 });
