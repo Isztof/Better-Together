@@ -110,12 +110,12 @@ const userObject = {
 
 registerButton.addEventListener("click", function () {
   try {
-    fetch("//netlify/functions/user_profile.js", {
+    fetch("/.netlify/functions/user_profile", {
       method: "POST",
       body: userObject,
     })
       .then((response) => response.json())
-      .then(console.log("I don't get what's the point of this log"));
+      .then(console.log(response));
   } catch (error) {
     fetch("/.netlify/functions/user_profile", {
       method: "POST",
