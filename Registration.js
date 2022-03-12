@@ -110,19 +110,18 @@ const userObject = {
 
 registerButton.addEventListener("click", function () {
   try {
-    fetch("netlify/functions/user_profile", {
+    fetch("//netlify/functions/user_profile.js", {
       method: "POST",
       body: userObject,
     })
       .then((response) => response.json())
       .then(comsolelog);
   } catch (error) {
-    fetch(
-      "https://bettter-together-net.netlify.app/netlify/functions/get-posts",
-      {
-        method: "POST",
-        body: userObject,
-      }
-    );
+    fetch("/.netlify/functions/user_profile", {
+      method: "POST",
+      body: userObject,
+    })
+      .then((response) => response.json())
+      .then(comsolelog);
   }
 });
