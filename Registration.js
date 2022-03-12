@@ -110,7 +110,7 @@ const userObject = {
 
 registerButton.addEventListener("click", function () {
   try {
-    fetch("/.netlify/functions/user_profile", {
+    fetch("netlify/functions/user_profile", {
       method: "POST",
       body: userObject,
     })
