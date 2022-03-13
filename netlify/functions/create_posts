@@ -1,0 +1,21 @@
+export default {
+    data() {
+      return {
+        posts: {}
+      }
+    },
+    methods: {
+      async createPost() {
+        const {title, content} = this.posts
+        if (!title || !content) return
+        const user = this.$supabase.auth.user()
+        const { data } = await this.$supabase
+          .from('posts')
+          .insert([
+              { title, content, user_id: user.id, user_email: user.email }
+          ])
+          .single()
+        this.$router.push(`/posts/${data.id}`)
+      }
+    }
+  }
