@@ -105,6 +105,7 @@ const userObject = {
   display_name: "Isztof",
   first_name: "Mariusz",
   last_name: "Seget",
+  second_name: "Sebastian",
   password: "Supabase1",
 };
 
