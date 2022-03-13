@@ -1,178 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Profile</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-    <link rel="stylesheet" href="profile.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Profile</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="profile.css">
 </head>
-<body> 
-    <header>
+
+<body>
+  <header>
     <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-         <ul class="navbar-nav ms-auto">
-             <li class="nav-item">
-                 <a class="nav-link text-white" href="login.html">Login</a>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link text-white" href="Registration-bootstrap.html">Register</a>
-             </li>
-         </ul>
-       </div>
-   </nav>
-   <nav class="navbar navbar-expand-lg navbar-light border-bottom-0 border-dark">
-       <div class="container-fluid">
-         <a class="navbar-brand text-white" href="#">BetterTogether</a>
-       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                  <a class="nav-link text-white" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link text-white" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link text-white" href="indexForum.html">Forum</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link text-white">Urgent Help</a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="Registration-bootstrap.html">Register</a>
+            </li>
           </ul>
-     </div>
-     </div>
-  </nav>
-</header>
-<class="container p-5"> <div class="row">
-        <div class="col-lg-4 bg-dark text-white text-center py-4">
-            <div class="header-left">
-                <img src="50x50picture.png" alt="" class="img thumbnail rounded-circle mb-2">
-                <h1 class="display-5">My Profile</h1>
-                <h4 class="lead text-uppercase text-white-50 mb-4">Psychologist</h4>
-            </div>
-
-            <div>
-                <h5 class="text-uppercase bg-white text-dark py-2 rounded-pill">Education</h5>
-                <ul class="list text-white-50 ml-5 py-2 text-left text-capitalize">
-                    <li class="list-item">Bachelor in Combridge University </li>
-                    <li class="list-item">Master in Harvard University </li>
-                    <li class="list-item">PhD in Oxford University</li>
-                </ul>
-            </div>
-
-            <div>
-                <h5 class="text-uppercase bg-white text-dark py-2 rounded-pill">Certification</h5>
-                <ul class="list text-white-50 ml-5 py-2 text-left text-capitalize">
-                    <li class="list-item">Clinical Psychology</li>
-                    <li class="list-item">Counseling Psychology</li>
-                    <li class="list-item">Forensic Psychology</li>
-                </ul>
-            </div>
-
         </div>
-        <div class="col-lg-8 bg-light text-dark py-4 px-5">
-            <div class="header-right">
-                <h4 class="text-uppercase">About Me</h4>
-                <hr>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam quam, animi error voluptatem harum vero nobis impedit, 
-                    ea veritatis quos deleniti, est explicabo doloremque odio ratione molestiae eius accusamus possimus. 
-                    Praesentium laudantium cum ea impedit beatae sit eveniet quae numquam labore quam suscipit libero laborum odio, 
-                    blanditiis perferendis officia neque?</p>
-            </div>
-
-            <div>
-                <h4 class="text-uppercase">Work Experience</h4>
-                <hr>
-                <div id="myDIV" class="header">
-                    <h2 style="margin:5px">My Experiences</h2>
-                    <div class="form-group col-md-6">
-                    <input type="text" id="myInput" placeholder="Text...">
-                    <span onclick="newElement()" class="addBtn">Add</span>
-                  </div>
-                </div>
-                  <ul id="myUL">
-                    <li>
-                        02.2010 -07.2014 Head Psychologist at the Heinrich-Heine-University in Düsseldorf</li>
-                    <li class="checked">10.2014-07.2018 Head Psychologist at Bochum University </li>
-                    <li>09.2018-07.2021 Head Psychologist at Berlin University</li>
-                    <li>08.2021-ongoing Head Psychologist at Goethe University</li>
-                  </ul>
-                  
-                  <script>
-                  // Create a "close" button and append it to each list item
-                  var myNodelist = document.getElementsByTagName("LI");
-                  var i;
-                  for (i = 0; i < myNodelist.length; i++) {
-                    var span = document.createElement("SPAN");
-                    var txt = document.createTextNode("\u00D7");
-                    span.className = "close";
-                    span.appendChild(txt);
-                    myNodelist[i].appendChild(span);
-                  }
-                  
-                  // Click on a close button to hide the current list item
-                  var close = document.getElementsByClassName("close");
-                  var i;
-                  for (i = 0; i < close.length; i++) {
-                    close[i].onclick = function() {
-                      var div = this.parentElement;
-                      div.style.display = "none";
-                    }
-                  }
-                  
-                  // Add a "checked" symbol when clicking on a list item
-                  var list = document.querySelector('ul');
-                  list.addEventListener('click', function(ev) {
-                    if (ev.target.tagName === 'LI') {
-                      ev.target.classList.toggle('checked');
-                    }
-                  }, false);
-                  
-                  //Create a new list item when clicking on the "Add" button
-                  function newElement() {
-                    var li = document.createElement("li");
-                    var inputValue = document.getElementById("myInput").value;
-                    var t = document.createTextNode(inputValue);
-                    li.appendChild(t);
-                    if (inputValue === '') {
-                      alert("You must write something!");
-                    } else {
-                      document.getElementById("myUL").appendChild(li);
-                    }
-                    document.getElementById("myInput").value = "";
-                  
-                    var span = document.createElement("SPAN");
-                    var txt = document.createTextNode("\u00D7");
-                    span.className = "close";
-                    span.appendChild(txt);
-                    li.appendChild(span);
-                  
-                    for (i = 0; i < close.length; i++) {
-                      close[i].onclick = function() {
-                        var div = this.parentElement;
-                        div.style.display = "none";
-                      }
-                    } 
-                  }
-                  
-                  </script>
-                
-                    </li>
-                </ul>
-            </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom-0 border-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">BetterTogether</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="indexForum.html">Forum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="urgentHelp.html">Urgent Help</a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
+  </header>
+  <class="container p-5">
+    <div class="row">
+      <div class="col-lg-4 bg-dark text-white text-center py-4">
+        <div class="header-left">
+          <img src="50x50picture.png" alt="" class="img thumbnail rounded-circle mb-2">
+          <h1 class="display-5">My Profile</h1>
+          <h4 class="lead text-uppercase text-white-50 mb-4">Psychologist</h4>
+        </div>
+
+        <div>
+          <h5 class="text-uppercase bg-white text-dark py-2 rounded-pill">Education</h5>
+          <ul class="list text-white-50 ml-5 py-2 text-left text-capitalize">
+            <li class="list-item">Bachelor in Combridge University </li>
+            <li class="list-item">Master in Harvard University </li>
+            <li class="list-item">PhD in Oxford University</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-uppercase bg-white text-dark py-2 rounded-pill">Certification</h5>
+          <ul class="list text-white-50 ml-5 py-2 text-left text-capitalize">
+            <li class="list-item">Clinical Psychology</li>
+            <li class="list-item">Counseling Psychology</li>
+            <li class="list-item">Forensic Psychology</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="col-lg-8 bg-light text-dark py-4 px-5">
+        <div class="header-right">
+          <h4 class="text-uppercase">About Me</h4>
+          <hr>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam quam, animi error voluptatem harum vero
+            nobis impedit,
+            ea veritatis quos deleniti, est explicabo doloremque odio ratione molestiae eius accusamus possimus.
+            Praesentium laudantium cum ea impedit beatae sit eveniet quae numquam labore quam suscipit libero laborum
+            odio,
+            blanditiis perferendis officia neque?</p>
+        </div>
+
+        <div>
+          <h4 class="text-uppercase">Work Experience</h4>
+          <hr>
+          <div id="myDIV" class="header">
+            <h2 style="margin:5px">My Experiences</h2>
+            <div class="form-group col-md-6">
+              <input type="text" id="myInput" placeholder="Text...">
+              <span onclick="newElement()" class="addBtn">Add</span>
+            </div>
+          </div>
+          <ul id="myUL">
+            <li>
+              02.2010 -07.2014 Head Psychologist at the Heinrich-Heine-University in Düsseldorf</li>
+            <li class="checked">10.2014-07.2018 Head Psychologist at Bochum University </li>
+            <li>09.2018-07.2021 Head Psychologist at Berlin University</li>
+            <li>08.2021-ongoing Head Psychologist at Goethe University</li>
+          </ul>
+
+          <script>
+            // Create a "close" button and append it to each list item
+            var myNodelist = document.getElementsByTagName("LI");
+            var i;
+            for (i = 0; i < myNodelist.length; i++) {
+              var span = document.createElement("SPAN");
+              var txt = document.createTextNode("\u00D7");
+              span.className = "close";
+              span.appendChild(txt);
+              myNodelist[i].appendChild(span);
+            }
+
+            // Click on a close button to hide the current list item
+            var close = document.getElementsByClassName("close");
+            var i;
+            for (i = 0; i < close.length; i++) {
+              close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+              }
+            }
+
+            // Add a "checked" symbol when clicking on a list item
+            var list = document.querySelector('ul');
+            list.addEventListener('click', function (ev) {
+              if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+              }
+            }, false);
+
+            //Create a new list item when clicking on the "Add" button
+            function newElement() {
+              var li = document.createElement("li");
+              var inputValue = document.getElementById("myInput").value;
+              var t = document.createTextNode(inputValue);
+              li.appendChild(t);
+              if (inputValue === '') {
+                alert("You must write something!");
+              } else {
+                document.getElementById("myUL").appendChild(li);
+              }
+              document.getElementById("myInput").value = "";
+
+              var span = document.createElement("SPAN");
+              var txt = document.createTextNode("\u00D7");
+              span.className = "close";
+              span.appendChild(txt);
+              li.appendChild(span);
+
+              for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                  var div = this.parentElement;
+                  div.style.display = "none";
+                }
+              }
+            }
+
+          </script>
+
+          </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
 </body>
+
 </html>
