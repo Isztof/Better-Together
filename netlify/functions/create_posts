@@ -12,7 +12,7 @@ export default {
         const { data } = await this.$supabase
           .from('posts')
           .insert([
-              { title, content, user_id: user.id, user_email: user.email }
+              { title, content, user_id: user.id }
           ])
           .single()
         this.$router.push(`/posts/${data.id}`)
