@@ -21,7 +21,7 @@ footer {
 
 #callToAction {
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 0rem;
 }
 
 #register2 {
@@ -31,4 +31,14 @@ footer {
 
 #register2:hover {
   opacity: 0.8;
+}
+img{
+  width: 10% !important;
+  height: auto !important;
+  display: block;
+  margin-left:auto;
+  margin-top: 1rem;
+  margin-right: auto;
+  
+
 }
