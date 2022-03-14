@@ -12,15 +12,10 @@ exports.handler = async (event) => {
   const { data, error } = await supabase
     .from("posts")
     .insert([
-      {
-        id: '2',
-        title: 'Hello',
-        content: 'This is a test',
-        modified_at: ' ',
-        user_id: 'DZ',
-      },
-    ]);
-  
+      {title: 'Hello', id:3},
+      {content: 'This is a test', id:3},
+      {user_id: 'DZ'},
+      ])
 
   if (error) {
     return {
