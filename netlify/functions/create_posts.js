@@ -13,11 +13,11 @@ exports.handler = async (event) => {
     .from("posts")
     .insert([
       {
-        id: "2",
-        title: "Hello",
-        content: "This is a test",
-        modified_at: "",
-        user_id: "DZ",
+        id: '2',
+        title: 'Hello',
+        content: 'This is a test',
+        modified_at: ' ',
+        user_id: 'DZ',
       },
     ]);
   
