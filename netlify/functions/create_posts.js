@@ -16,7 +16,8 @@ exports.handler = async (event) => {
       {content:'This is a test', id:3},
       {content: 'This is a test', id:'4'},
       {user_id: 'DZ', id:'5'},
-      ])
+      ]),
+  { upsert: true })
 
   if (error) {
     return {
