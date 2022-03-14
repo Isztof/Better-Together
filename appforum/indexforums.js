@@ -1,1 +1,1 @@
-fetch('./.netlify/functions/create_posts.js').then(response => response.json());
+fetch('./.netlify/functions/posts').then(response => response.json());
