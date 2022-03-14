@@ -21,11 +21,6 @@ exports.handler = async (event) => {
       },
     ]);
   
-   const offset = 1000 * 60 * 60 * 6; //6h days
-        const myDate = new Date();
-        myDate.setTime(myDate.getTime() - offset);
-
-        const time_string = myDate.toISOString().toLocaleString("de-DE");
 
   if (error) {
     return {
