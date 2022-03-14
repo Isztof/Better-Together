@@ -14,7 +14,7 @@ exports.handler = async (event) => {
     .insert([
       {
         id: "2",
-        created_at: "timestamptz",
+        created_at: "2022-03-07 19:16:44+00",
         title: "Hello",
         content: "This is a test",
         modified_at: "",
