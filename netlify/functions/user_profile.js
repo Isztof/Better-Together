@@ -10,7 +10,7 @@ exports.handler = async (event) => {
   // const body = event.body;
   const { data, error } = await supabase.from("profile").insert([
     {
-      id: 123,
+      id: "98255092-a382-11ec-b909-0242ac120002",
       display_name: "Isztof",
       first_name: "Mariusz",
       last_name: "Seget",
