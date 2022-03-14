@@ -1,30 +1,39 @@
+// Grab our credentials from a .env file or environment variables
 require('dotenv').config();
 const {
     DATABASE_URL,
-    DATABASE_SECRET
+    SUPABASE_SERVICE_API_KEY
 } = process.env;
 
-const { createClient } = grequire('@supabase/supabase-js');
-const supabase = createClient(DATABASE_URL, DATABASE_SECRET);
-export default {
-    data() {
-      return {
-        posts: {}
-      }
-    },
-    
-    methods: {
-      async createPost() {
-        const {title, content} = this.posts
-        if (!title || !content) return
-        const user = this.$supabase.auth.user()
-        const { data } = await this.$supabase
-          .from('posts')
-          .insert([
-              { id, title, content, user_id: user.id, modified_at }
-          ])
-          .single()
-        this.$router.push(`/posts/${data.id}`)
-      }
-    }
+// Connect to our database 
+const { createClient } = require('@supabase/supabase-js');
+const supabase = createClient(DATABASE_URL, SUPABASE_SERVICE_API_KEY);
+
+// Our standard serverless handler function
+exports.handler = async event => {
+
+  // Insert a row
+    const { data, error } = await supabase
+        .from('posts')
+        .insert([
+            {title, content, user_id: user.id, user_email: user.email},
+        ]);
+
+  // Did it work?
+  console.log(data, error);
+  
+}
+
+if (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify(error),
+    };
   }
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify(data),
+  };
+};
+
