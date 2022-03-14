@@ -16,7 +16,13 @@ exports.handler = async event => {
     const { data, error } = await supabase
         .from('posts')
         .insert([
-            {title, content, user_id: user.id, user_email: user.email},
+            {id: '2'
+            created_at: '17:10'
+            title: 'Hello'
+            content: 'This is a test'
+            modified_at: ''
+            user_id: 'DZ'
+            },
         ]);
 
   // Did it work?
@@ -45,4 +51,4 @@ let { data: posts, error } = await supabase
 // Just return the date and note columns of every note 
 let { data: posts, error } = await supabase
     .from('posts')
-    .select('id, created_at,title, content, modified_at user_id')
+    .select('id, created_at,title, content, modified_at, user_id')
