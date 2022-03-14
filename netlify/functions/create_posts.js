@@ -12,7 +12,8 @@ exports.handler = async (event) => {
   const { data, error } = await supabase
     .from('posts')
     .insert([
-      {title: 'Hello', content:'this is a test', id:'3'},
+      {title: 'Hello', id:'3'},
+      {content:'This is a test', id:'3'}
       {content: 'This is a test', id:'4'},
       {user_id: 'DZ', id:'5'},
       ])
