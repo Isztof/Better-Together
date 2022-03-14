@@ -1,9 +1,18 @@
+require('dotenv').config();
+const {
+    DATABASE_URL,
+    DATABASE_SECRET
+} = process.env;
+
+const { createClient } = grequire('@supabase/supabase-js');
+const supabase = createClient(DATABASE_URL, DATABASE_SECRET);
 export default {
     data() {
       return {
         posts: {}
       }
     },
+    
     methods: {
       async createPost() {
         const {title, content} = this.posts
