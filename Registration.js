@@ -105,7 +105,6 @@ const userObject = {
   display_name: "Isztof",
   first_name: "Mariusz",
   last_name: "Seget",
-  second_name: "Sebastian",
   password: "Supabase1",
 };
 
@@ -113,5 +112,8 @@ registerButton.addEventListener("click", function () {
   fetch("../.netlify/functions/user_profile", {
     method: "POST",
     body: userObject,
-  }).then((response) => response.json());
+  }).then((response) => {
+    response.json();
+    console.log(response);
+  });
 });
