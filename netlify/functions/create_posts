@@ -37,3 +37,12 @@ if (error) {
   };
 };
 
+// Get everything from the notes table
+let { data: posts, error } = await supabase
+    .from('posts')
+    .select('*')
+
+// Just return the date and note columns of every note 
+let { data: posts, error } = await supabase
+    .from('posts')
+    .select('id, created_at,title, content, modified_at user_id')
