@@ -109,10 +109,8 @@ const userObject = {
 };
 
 registerButton.addEventListener("click", function () {
-  fetch("../.netlify/functions/user_profile")
-    .then((response) => {
-      response.json();
-      console.log(response);
-    })
-    .then((data) => console.log(data));
+  fetch("../.netlify/functions/user_profile").then((response) => {
+    response.json();
+    console.log(response);
+  });
 });
