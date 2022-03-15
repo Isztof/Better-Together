@@ -1,26 +1,21 @@
 // Grab our credentials from a .env file or environment variables
 require("dotenv").config();
-const { DATABASE_URL, SUPABASE_SERVICE_API_KEY } = process.env;
+const { SUPABASE_URL, SUPABASE_KEY } = process.env;
 
 // Connect to our database
 const { createClient } = require("@supabase/supabase-js");
-const supabase = createClient(DATABASE_URL, SUPABASE_SERVICE_API_KEY);
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Our standard serverless handler function
 exports.handler = async (event) => {
   // Insert a row
   const { data, error } = await supabase
-    .from("posts")
+    .from('posts')
     .insert([
-      {
-        id: "2",
-        created_at: "17:10",
-        title: "Hello",
-        content: "This is a test",
-        modified_at: "",
-        user_id: "DZ",
-      },
-    ]);
+      {title: 'Hello', id:'3'},
+      {content: 'This is a test', id:'4'},
+      {user_id: 'DZ', id:'5'},
+      ])
 
   if (error) {
     return {
