@@ -9,13 +9,9 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 // Our standard serverless handler function
 exports.handler = async (event) => {
   // Insert a row
-  const { data, error } = await supabase
-    .from("posts")
-    .insert([
-      { title: "Hello" },
-      { content: "This is a test" },
-      { user_id: "DZ" },
-    ]);
+  const body2 = event.body;
+  console.log(body2);
+  const { data, error } = await supabase.from("posts").insert(body2);
 
   if (error) {
     return {
