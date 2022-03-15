@@ -15,6 +15,7 @@ function addingPost() {
   console.log(array);
   // fetch the serverless function to pass the array to the database
   fetch("./.netlify/functions/create_posts", {
+    method: "POST",
     body: array,
   }).then((response) => response.json());
 }
