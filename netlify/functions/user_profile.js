@@ -9,13 +9,11 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 exports.handler = async (event) => {
   // const body = event.body;
   const { data, error } = await supabase.from("profile").insert([
-    {
-      id: "98255092-a382-11ec-b909-0242ac120002",
-      display_name: "Isztof",
-      first_name: "Mariusz",
-      last_name: "Seget",
-      password: "bettertogether2",
-    },
+    { user_id: "98255092-a382-11ec-b909-0242ac120002", id: 1 },
+    { display_name: "Isztof", id: 2 },
+    { first_name: "Mariusz", id: 3 },
+    { last_name: "Seget", id: 4 },
+    { password: "bettertogether2", id: 5 },
   ]);
   // Did it work?
   console.log(data, error);
