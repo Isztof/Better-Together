@@ -108,11 +108,11 @@ const userObject = {
   password: "Supabase1",
 };
 
-registerButton.addEventListener("click", function () {
-  fetch("./.netlify/functions/user_profile", {
-    method: "POST",
-  }).then((response) => {
-    response.json();
-    console.log(response);
-  });
+//registerButton.addEventListener("click", function () {
+fetch("./.netlify/functions/user_profile", {
+  method: "POST",
+}).then((response) => {
+  response.json();
+  console.log(response);
 });
+//});
