@@ -100,19 +100,20 @@ myInput2.onkeyup = function () {
 //create a new user account in supabase
 const registerButton = document.querySelector("#postB");
 
-const userObject = {
-  id: 123,
-  display_name: "Isztof",
-  first_name: "Mariusz",
-  last_name: "Seget",
-  password: "Supabase1",
-};
+const userObject = [
+  { display_name: "Isztof", id: "1" },
+  { first_name: "Mariusz", id: "2" },
+  { last_name: "Seget", id: "3" },
+  { password: "bettertogether2", id: "5" },
+  { user_id: "982", id: "6" },
+];
 
-//registerButton.addEventListener("click", function () {
-/*
-fetch("./.netlify/functions/user_profile").then((response) => {
-  response.json();
-  console.log(response);
+registerButton.addEventListener("click", function () {
+  fetch("./.netlify/functions/user_profile", {
+    method: "POST",
+    body: userObject,
+  }).then((response) => {
+    response.json();
+    console.log(response);
+  });
 });
-*/
-//});
