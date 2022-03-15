@@ -14,10 +14,13 @@ function addingPost() {
   // print out the array
   console.log(array);
   // fetch the serverless function to pass the array to the database
-  fetch("../.netlify/functions/create_posts", {
-    method: "POST",
-    body: array,
-  }).then((response) => response.json());
+  fetch(
+    "https://bettter-together-net.netlify.app/netlify/functions/create_posts",
+    {
+      method: "POST",
+      body: array,
+    }
+  ).then((response) => response.json());
 }
 
 // we activate this function every time the user clicks on the share button so every time when he creates a new share
