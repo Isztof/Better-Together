@@ -112,8 +112,5 @@ registerButton.addEventListener("click", function () {
   fetch("./.netlify/functions/user_profile", {
     method: "POST",
     body: userObject,
-  }).then((response) => {
-    response.json();
-    console.log(response);
-  });
+  }).then((response) => response.json());
 });
