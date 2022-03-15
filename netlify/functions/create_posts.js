@@ -10,12 +10,12 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 exports.handler = async (event) => {
   // Insert a row
   const { data, error } = await supabase
-    .from('posts')
+    .from("posts")
     .insert([
-      {title: 'Hello', id:'3'},
-      {content: 'This is a test', id:'4'},
-      {user_id: 'DZ', id:'5'},
-      ])
+      { title: "Hello" },
+      { content: "This is a test" },
+      { user_id: "DZ" },
+    ]);
 
   if (error) {
     return {
