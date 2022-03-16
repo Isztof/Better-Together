@@ -11,7 +11,7 @@ async function loadData() {
 }
 
 loadData();
-
+/*
 async function loadData() {
   const { data, error } = await _supabase.from("posts").select();
   console.log(data);
@@ -23,4 +23,4 @@ async function loadData() {
     });
   }
   */
-}
+s;
