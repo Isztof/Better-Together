@@ -29,6 +29,6 @@ fetch("../.netlify/functions/displayPosts")
              <button onclick="showPanel()"  class="commentBtn"> Comment</button> 
               <button onclick="reportUI()" class="repButton">Report</button>   
          </div>`;
-      document.querySelector("section").appendChild(frame);
+      document.querySelector("main").appendChild(frame);
     });
   });
