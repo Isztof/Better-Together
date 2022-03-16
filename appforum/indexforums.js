@@ -10,7 +10,7 @@ function addingPost() {
   let postDescription2 = postDescriptionInput2.value;
 
   // we create the js  array containing js objects
-  let array = [{ title: postTitle2 }, { content: postDescription2 }];
+  let array = [{ title: postTitle2, content: postDescription2 }];
   // print out the array
   console.log(array);
   // fetch the serverless function to pass the array to the database
