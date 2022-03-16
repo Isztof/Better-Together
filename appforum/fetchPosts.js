@@ -14,10 +14,10 @@ fetch("../.netlify/functions/displayPosts")
       var secondSpan;
 
       console.log(postDescription);
-      console.log(JSON.parse(postDescription));
-      var count = Object.keys(postDescription).length;
+      //var count = Object.keys(postDescription).length;
+      //console.log(count);
+      let count = postDescription.length;
       console.log(count);
-
       if (count > 1250) {
         const firstSpan = postDescription.substring(0, 1250);
         secondSpan = postDescription.substring(1250, count);
