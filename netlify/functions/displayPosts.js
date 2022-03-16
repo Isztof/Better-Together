@@ -3,16 +3,21 @@ const { SUPABASE_URL, SUPABASE_KEY } = process.env;
 const { createClient } = require("@supabase/supabase-js");
 const _supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-exports.handler = async (event) => {
-  async function loadData() {
-    const { data, error } = await _supabase.from("posts").select();
+exports.handler = async function (event, body) {
+  const { data, error } = await _supabase.from("posts").select();
 
-    console.log(JSON.parse(data));
-    if (error) {
-      console.log(error);
-    }
+  console.log(JSON.parse(data));
+  if (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify(error),
+    };
   }
-  loadData();
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify(data),
+  };
 };
 
 /*
