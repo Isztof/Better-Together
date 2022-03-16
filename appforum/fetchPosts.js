@@ -2,7 +2,7 @@ fetch("../.netlify/functions/displayPosts")
   .then((response) => response.json())
   .then((json) => {
     let li = `<tr><th>Title</th><th>Description</th></tr>`;
-
+    console.log(json);
     json.forEach((item) => {
       li += `
         <tr>
@@ -11,5 +11,5 @@ fetch("../.netlify/functions/displayPosts")
         </tr>`;
     });
     // Display result
-    document.getElementById("users").innerHTML = li;
+    document.getElementById("posts").innerHTML = li;
   });
