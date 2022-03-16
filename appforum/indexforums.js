@@ -19,8 +19,14 @@ function addingPost() {
     {
       method: "POST",
       body: JSON.stringify(array),
+      headers: new Headers({
+        "Content-Type": "application/json",
+      }),
     }
-  ).then((response) => response.json().then((json) => console.log(json)));
+  )
+    .then((response) => response.json())
+    .then((json) => console.log(json))
+    .catch((error) => console.error(error));
 }
 
 // we activate this function every time the user clicks on the share button so every time when he creates a new share
