@@ -13,9 +13,12 @@ fetch("../.netlify/functions/displayPosts")
       let addReadMore = false;
       var secondSpan;
 
-      if (postDescription.length > 1250) {
+      var count = Object.keys(postDescription).length;
+      console.log(count);
+
+      if (count > 1250) {
         const firstSpan = postDescription.substring(0, 1250);
-        secondSpan = postDescription.substring(1550, postDescription.length);
+        secondSpan = postDescription.substring(1250, count);
         postDescription = firstSpan;
         addReadMore = true;
       }

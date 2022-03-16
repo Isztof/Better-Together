@@ -75,9 +75,12 @@ function addingPost() {
   let addReadMore = false;
   var secondSpan;
 
-  if (postDescription.length > 1550) {
+  var count = Object.keys(postDescription).length;
+  console.log(count);
+
+  if (count > 1550) {
     const firstSpan = postDescription.substring(0, 1550);
-    secondSpan = postDescription.substring(1550, postDescription.length);
+    secondSpan = postDescription.substring(1550, count);
     postDescription = firstSpan;
     addReadMore = true;
     // postDescription.innerHTML += `<a>...Read more</a>`;
@@ -159,5 +162,3 @@ function resizerSelector(element) {
     // textArea.style.height = `${scHeight}px`;
   });
 }
-
-  
