@@ -6,7 +6,6 @@ const _supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 exports.handler = async function (event, body) {
   const { data, error } = await _supabase.from("posts").select();
 
-  console.log(JSON.parse(data));
   if (error) {
     return {
       statusCode: 500,
