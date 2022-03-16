@@ -4,7 +4,11 @@ const { createClient } = require("@supabase/supabase-js");
 const _supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 try {
   async function loadData() {
-    const { data, error } = await _supabase.from("posts").select();
+    const { data, error } = await _supabase
+      .from("posts")
+      .select("title")
+      .limit(1)
+      .single();
 
     console.log(data);
     if (error) {
