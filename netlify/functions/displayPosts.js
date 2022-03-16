@@ -1,8 +1,9 @@
-require("dotenv").config();
-const { SUPABASE_URL, SUPABASE_KEY } = process.env;
-const { createClient } = require("@supabase/supabase-js");
-const _supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 try {
+  require("dotenv").config();
+  const { SUPABASE_URL, SUPABASE_KEY } = process.env;
+  const { createClient } = require("@supabase/supabase-js");
+  const _supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
   async function loadData() {
     const { data, error } = await _supabase
       .from("posts")
