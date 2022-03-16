@@ -1,3 +1,4 @@
+var id = 0;
 fetch("../.netlify/functions/displayPosts")
   .then((response) => response.json())
   .then((json) => {
