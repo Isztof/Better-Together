@@ -6,15 +6,17 @@ const SUPABASE_KEY =
 const { createClient } = require("@supabase/supabase-js");
 const _supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-async function loadData() {
-  const { data, error } = await _supabase.from("posts").select();
+exports.handler = async (event) => {
+  async function loadData() {
+    const { data, error } = await _supabase.from("posts").select();
 
-  console.log(data);
-  if (error) {
-    console.log(error);
+    console.log(data);
+    if (error) {
+      console.log(error);
+    }
   }
-}
-loadData();
+  loadData();
+};
 
 /*
 async function loadData() {
