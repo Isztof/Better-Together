@@ -6,7 +6,7 @@ try {
   async function loadData() {
     const { data, error } = await _supabase
       .from("posts")
-      .select("title")
+      .select("title, id")
       .limit(1)
       .single();
 
