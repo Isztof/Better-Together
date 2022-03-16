@@ -13,6 +13,8 @@ fetch("../.netlify/functions/displayPosts")
       let addReadMore = false;
       var secondSpan;
 
+      console.log(postDescription);
+      console.log(JSON.parse(postDescription));
       var count = Object.keys(postDescription).length;
       console.log(count);
 
