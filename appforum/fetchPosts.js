@@ -16,46 +16,51 @@ fetch("../.netlify/functions/displayPosts")
       console.log(postDescription);
       //var count = Object.keys(postDescription).length;
       //console.log(count);
-      let count = postDescription.length;
-      console.log(count);
-      if (count > 1250) {
-        const firstSpan = postDescription.substring(0, 1250);
-        secondSpan = postDescription.substring(1250, count);
-        postDescription = firstSpan;
-        addReadMore = true;
+      try {
+        let count = postDescription.length;
+        console.log(count);
+        if (count > 1250) {
+          const firstSpan = postDescription.substring(0, 1250);
+          secondSpan = postDescription.substring(1250, count);
+          postDescription = firstSpan;
+          addReadMore = true;
+        }
+
+        if (addReadMore) {
+          frame.innerHTML = ` 
+              <div class="authorDateTag">
+              <img class="picture" src="/imgs/50x50picture.png" alt="">
+              <!-- <div class="picture" ></div> -->
+               <div class="authorTag">John Doe</div>
+               <div class="dateTag">27.01.2021 21:49</div>
+               <h4 class="noteTitle" > ${postTitle}</h4> 
+             </div>
+               <div class="noteDescription"> <span> ${postDescription} </span> <span class="readMoreTag" onclick="readMore('${`post${id}`}')">...Read more</span> <span class="secondPart">${secondSpan}</span></div> 
+              <div class="postBtns">
+                 <button onclick="showPanel('${`post${id}`}')"  class="commentBtn"> Comment</button> 
+                  <button onclick="reportUI()" class="repButton">Report</button>   
+             </div>
+              `;
+        } else {
+          frame.innerHTML = ` 
+              <div class="authorDateTag">
+              <img class="picture" src="/imgs/50x50picture.png" alt="">
+              <!-- <div class="picture" ></div> -->
+               <div class="authorTag">John Doe</div>
+               <div class="dateTag">27.01.2021 21:49</div>
+               <h4 class="noteTitle" > ${postTitle}</h4> 
+             </div>
+               <div class="noteDescription">  ${postDescription}  </div> 
+              <div class="postBtns">
+                 <button onclick="showPanel('${`post${id}`}')"  class="commentBtn"> Comment</button> 
+                 <button onclick="reportUI()" class="repButton">Report</button>  
+             </div>
+              `;
+        }
+      } catch (error) {
+        console.log("This Post has an empty description");
       }
 
-      if (addReadMore) {
-        frame.innerHTML = ` 
-            <div class="authorDateTag">
-            <img class="picture" src="/imgs/50x50picture.png" alt="">
-            <!-- <div class="picture" ></div> -->
-             <div class="authorTag">John Doe</div>
-             <div class="dateTag">27.01.2021 21:49</div>
-             <h4 class="noteTitle" > ${postTitle}</h4> 
-           </div>
-             <div class="noteDescription"> <span> ${postDescription} </span> <span class="readMoreTag" onclick="readMore('${`post${id}`}')">...Read more</span> <span class="secondPart">${secondSpan}</span></div> 
-            <div class="postBtns">
-               <button onclick="showPanel('${`post${id}`}')"  class="commentBtn"> Comment</button> 
-                <button onclick="reportUI()" class="repButton">Report</button>   
-           </div>
-            `;
-      } else {
-        frame.innerHTML = ` 
-            <div class="authorDateTag">
-            <img class="picture" src="/imgs/50x50picture.png" alt="">
-            <!-- <div class="picture" ></div> -->
-             <div class="authorTag">John Doe</div>
-             <div class="dateTag">27.01.2021 21:49</div>
-             <h4 class="noteTitle" > ${postTitle}</h4> 
-           </div>
-             <div class="noteDescription">  ${postDescription}  </div> 
-            <div class="postBtns">
-               <button onclick="showPanel('${`post${id}`}')"  class="commentBtn"> Comment</button> 
-               <button onclick="reportUI()" class="repButton">Report</button>  
-           </div>
-            `;
-      }
       id++;
       document.querySelector("main").appendChild(frame);
     });
