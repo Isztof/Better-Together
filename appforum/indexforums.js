@@ -15,7 +15,7 @@ function addingPost() {
   console.log(array);
   // fetch the serverless function to pass the array to the database
   fetch(
-    "https://bettter-together-net.netlify.app/netlify/functions/create_posts.js",
+    "https://bettter-together-net.netlify.app/netlify/functions/createPosts",
     {
       method: "POST",
       body: JSON.stringify(array),
