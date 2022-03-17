@@ -149,7 +149,7 @@ function resizerSelector(element) {
 }
 
 // display comments saved in the database
-fetch("../.netlify/functions/displayPosts")
+fetch("../.netlify/functions/displayComments")
   .then((response) => response.json())
   .then((json) => {
     console.log(json);
