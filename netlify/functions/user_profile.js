@@ -7,7 +7,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Insert a row
 exports.handler = async (event) => {
-  let body2 = event.body;
+  let body2 = JSON.parse(event.body);
   console.log(body2);
   const { data, error } = await supabase.from("User_Accounts").insert(body2);
 
