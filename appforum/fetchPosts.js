@@ -112,7 +112,7 @@ function addComment(element) {
   } else {
     var commentsSection = document.querySelector(`#${element} .comments`);
     commentsSection.appendChild(comment);
-    let comArray = [{ comContent: inputValue, postIdent: this.id }];
+    let comArray = [{ comContent: inputValue, postIdent: element }];
     console.log(comArray);
     fetch("..//.netlify/functions/saveComments", {
       method: "POST",
@@ -161,11 +161,9 @@ fetch("../.netlify/functions/displayComments")
       <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
       <div class="commentText"> ${fetchedComment} </div> 
     `;
-      var commentID = item.id;
+      var commentID = item.postIdent;
       console.log("Comment id:" + commentID);
-      var commentsSection = document.querySelector(
-        `#post${commentID} .comments`
-      );
+      var commentsSection = document.querySelector(`#${commentID} .comments`);
       commentsSection.appendChild(comment);
     });
   });
