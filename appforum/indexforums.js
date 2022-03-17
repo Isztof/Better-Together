@@ -14,16 +14,13 @@ function addingPost() {
   // print out the array
   console.log(array);
   // fetch the serverless function to pass the array to the database
-  fetch(
-    "https://bettter-together-net.netlify.app/netlify/functions/createPosts",
-    {
-      method: "POST",
-      body: JSON.stringify(array),
-      headers: new Headers({
-        "Content-Type": "application/json",
-      }),
-    }
-  )
+  fetch("..//.netlify/functions/createPosts", {
+    method: "POST",
+    body: JSON.stringify(array),
+    headers: new Headers({
+      "Content-Type": "application/json",
+    }),
+  })
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error(error));
