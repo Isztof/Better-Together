@@ -126,14 +126,6 @@ const userObject = {
 };
                                                
 
-const userObject = [
-  { display_name: "Isztof" },
-  { first_name: "Mariusz" },
-  { last_name: "Seget" },
-  { password: "bettertogether2" },
-  { user_id: "982" },
-];
-
 registerButton.addEventListener("click", function () {
   fetch("../.netlify/functions/user_profile", {
     method: "POST",
