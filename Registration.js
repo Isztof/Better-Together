@@ -102,17 +102,23 @@ const registerButton = document.querySelector("#postB");
 //selectors for the input boxes
 let firstNameInputBox = document.querySelector("#validationCustom01");
 let lastNameInputBox = document.querySelector("#validationCustom02");
-let userNameInputBox = document.querySelector("#validationCustomUsername"); 
-let emailInputBox = document.querySelector("#validationCustomEmail"); 
-let passwordInputBox = document.querySelector("#psw"); 
+let userNameInputBox = document.querySelector("#validationCustomUsername");
+let emailInputBox = document.querySelector("#validationCustomEmail");
+let passwordInputBox = document.querySelector("#psw");
 
+
+
+
+//fetch the serverless function to save the values in the databse
+
+registerButton.addEventListener("click", function () {
 //get value of the Input boxes
 
 let firstNameValue = firstNameInputBox.value;
 let lastNameValue = lastNameInputBox.value;
 let userNameValue = userNameInputBox.value;
 let emailValue = emailInputBox.value;
-let passwordValue = passwordInputBox.value; 
+let passwordValue = passwordInputBox.value;
 
 //create out of the values an array
 
@@ -122,22 +128,19 @@ const userObject = {
   first_name: firstNameValue,
   last_name: lastNameValue,
   email: emailValue,
-  password: passwordValue ,
+  password: passwordValue,
 };
 
-//fetch the serverless function to save the values in the databse
-
-registerButton.addEventListener("click", function () {
-  fetch("../.netlify/functions/user_profile",{
-     method: "POST",
-     body: JSON.stringify(userObject),
-     headers: new Headers({
+  fetch("../.netlify/functions/user_profile", {
+    method: "POST",
+    body: JSON.stringify(userObject),
+    headers: new Headers({
       "Content-Type": "application/json",
     }),
-  }) 
-  .then((response) => response.json())
-  .then((json) => console.log(json))
-  .catch((error) => console.error(error));
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json))
+    .catch((error) => console.error(error));
 })
 
 
