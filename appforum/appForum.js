@@ -33,6 +33,7 @@ function addComment(element) {
   // comment.appendChild(t);
   comment.innerHTML = `
         <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
+        <div class="comDateTag"> 17.03.2022 20:21 </div> 
         <div class="commentText"> ${inputValue} </div> 
       `;
   /*

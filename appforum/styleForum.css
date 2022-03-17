@@ -163,6 +163,14 @@ section {
   width: 20%;
 }
 
+.comDateTag {
+  font-weight: 300;
+  font-size: 14px;
+  margin-left: 40px;
+  padding-left: 30px;
+  width: 100%;
+}
+
 .noteTitle {
   padding-top: 10px;
   text-align: center;

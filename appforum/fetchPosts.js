@@ -6,6 +6,7 @@ fetch("../.netlify/functions/displayPosts")
     json.forEach((item) => {
       let postDescription = item.content;
       let postTitle = item.title;
+      let postDate = item.created_at;
       let frame = document.createElement("div");
       frame.className = "frame";
       frame.id = `post${id}`;
@@ -32,7 +33,7 @@ fetch("../.netlify/functions/displayPosts")
               <img class="picture" src="/imgs/50x50picture.png" alt="">
               <!-- <div class="picture" ></div> -->
                <div class="authorTag">John Doe</div>
-               <div class="dateTag">27.01.2021 21:49</div>
+               <div class="dateTag">${created_at}</div>
                <h4 class="noteTitle" > ${postTitle}</h4> 
              </div>
                <div class="noteDescription"> <span> ${postDescription} </span> <span class="readMoreTag" onclick="readMore('${`post${id}`}')">...Read more</span> <span class="secondPart">${secondSpan}</span></div> 
@@ -157,8 +158,10 @@ fetch("../.netlify/functions/displayComments")
       var comment = document.createElement("div");
       comment.className = "comment";
       let fetchedComment = item.comContent;
+      let fetchedCommentDate = item.createdAt;
       comment.innerHTML = `
       <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
+      <div class="comDateTag"> ${fetchedCommentDate}</div> 
       <div class="commentText"> ${fetchedComment} </div> 
     `;
       var commentID = item.postIdent;
