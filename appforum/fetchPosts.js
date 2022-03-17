@@ -164,7 +164,7 @@ fetch("../.netlify/functions/displayComments")
       var commentID = item.postIdent;
       console.log(commentID);
       var commentsSection = document.querySelector(`#${commentID} .comments`);
-      console.log(commentSection);
+      console.log(commentsSection);
       commentsSection.appendChild(comment);
     });
   });
