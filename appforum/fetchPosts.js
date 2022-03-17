@@ -57,6 +57,18 @@ fetch("../.netlify/functions/displayPosts")
              </div>
               `;
         }
+        // Comments section
+
+        let comPanel = document.createElement("div");
+        comPanel.className = "panel";
+        frame.appendChild(comPanel);
+        let commentS = document.createElement("div");
+        commentS.className = "comments";
+        comPanel.appendChild(commentS);
+        comPanel.innerHTML = `
+        <div class="comments"> </div> 
+        <span class="commentLine">  <textarea id="'${`post${id}`}' " onfocus="resizerSelector('${`post${id}`}')" class="areaT" placeholder="Type in your comment"></textarea><button type="submit" onclick="addComment('${`post${id}`}')"  class="btn btn-info btn-sm shadow-none text-left" >Comment</button> </span>
+        `;
       } catch (error) {
         console.log("This Post has an empty description");
       }
@@ -71,4 +83,67 @@ function readMore(element) {
   let spanToHide = document.querySelector(`#${element} .readMoreTag`);
   spanToShow.style.display = "inline-block";
   spanToHide.remove();
+}
+
+// open the panel function
+function showPanel(element) {
+  let panel = document.querySelector(`#${element} .panel`);
+  console.log(panel);
+  panel.className = "panel";
+  if (panel.style.display === "block") {
+    panel.style.display = "none";
+  } else {
+    panel.style.display = "block";
+  }
+}
+
+// adding new comments to the comment panel
+function addComment(element) {
+  var comment = document.createElement("div");
+  comment.className = "comment";
+  var comInput = document.querySelector(`#${element} .areaT`);
+  console.log(element);
+  let inputValue = comInput.value;
+  comment.innerHTML = `
+        <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
+        <div class="commentText"> ${inputValue} </div> 
+      `;
+  if (inputValue === "") {
+    alert("You cannot post an empty comment!");
+  } else {
+    var commentsSection = document.querySelector(`#${element} .comments`);
+    commentsSection.appendChild(comment);
+    let comArray = [{ comContent: inputValue }];
+    fetch("..//.netlify/functions/saveComments", {
+      method: "POST",
+      body: JSON.stringify(comArray),
+      headers: new Headers({
+        "Content-Type": "application/json",
+      }),
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json))
+      .catch((error) => console.error(error));
+  }
+}
+/* will be added once Ali completes this UI
+function HPprofile() {
+  window.location.href = "/HPprofile/profile.html";
+}
+*/
+
+function reportUI() {
+  window.location.href = "/reportPost/reportPost.html";
+}
+
+// comment input resizer
+function resizerSelector(element) {
+  var textArea = document.querySelector(`#${element} .areaT`);
+  textAreaTBR = textArea;
+
+  textAreaTBR.addEventListener("keyup", (e) => {
+    let scHeight = e.target.scrollHeight;
+    console.log(scHeight);
+    // textArea.style.height = `${scHeight}px`;
+  });
 }
