@@ -160,7 +160,7 @@ fetch("../.netlify/functions/displayPosts")
       let fetchedComment = item.comContent;
       comment.innerHTML = `
       <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
-      <div class="commentText"> ${inputValue} </div> 
+      <div class="commentText"> ${fetchedComment} </div> 
     `;
       var commentID = item.id;
       var commentsSection = document.querySelector(
