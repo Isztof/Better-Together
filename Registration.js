@@ -100,11 +100,11 @@ myInput2.onkeyup = function () {
 //create a new user account in supabase
 const registerButton = document.querySelector("#postB");
 //selectors for the input boxes
-let firstNameInputBox = document.querySelector("#validationCustom01);
-let lastNameInputBox = document.querySelector("#validationCustom02);
-let userNameInputBox = document.querySelector("#validationCustomUsername); 
-let emailInputBox = document.querySelector("#validationCustomEmail); 
-let passwordInputBox = document.querySelector("#psw); 
+let firstNameInputBox = document.querySelector("#validationCustom01");
+let lastNameInputBox = document.querySelector("#validationCustom02");
+let userNameInputBox = document.querySelector("#validationCustomUsername"); 
+let emailInputBox = document.querySelector("#validationCustomEmail"); 
+let passwordInputBox = document.querySelector("#psw"); 
 
 //get value of the Input boxes
 
