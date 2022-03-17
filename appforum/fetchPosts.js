@@ -1,4 +1,4 @@
-var id = 0;
+var id = 1;
 fetch("../.netlify/functions/displayPosts")
   .then((response) => response.json())
   .then((json) => {
@@ -72,7 +72,6 @@ fetch("../.netlify/functions/displayPosts")
       } catch (error) {
         console.log("This Post has an empty description");
       }
-
       id++;
       document.querySelector("main").appendChild(frame);
     });
@@ -163,6 +162,7 @@ fetch("../.netlify/functions/displayPosts")
       <div class="commentText"> ${fetchedComment} </div> 
     `;
       var commentID = item.id;
+      console.log("Comment id:" + commentID);
       var commentsSection = document.querySelector(
         `#post${commentID} .comments`
       );
