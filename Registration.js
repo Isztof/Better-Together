@@ -128,15 +128,16 @@ const userObject = {
 //fetch the serverless function to save the values in the databse
 
 registerButton.addEventListener("click", function () {
-  fetch("../.netlify/functions/user_profile")
-     body: JSON.stringify(userObject)
+  fetch("../.netlify/functions/user_profile",{
+     method: "POST",
+     body: JSON.stringify(userObject),
      headers: new Headers({
       "Content-Type": "application/json",
     }),
-  })
+  }) 
   .then((response) => response.json())
   .then((json) => console.log(json))
   .catch((error) => console.error(error));
-}
+})
 
 
