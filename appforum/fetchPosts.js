@@ -113,7 +113,8 @@ function addComment(element) {
   } else {
     var commentsSection = document.querySelector(`#${element} .comments`);
     commentsSection.appendChild(comment);
-    let comArray = [{ comContent: inputValue }];
+    let comArray = [{ id: element, comContent: inputValue }];
+    console.log(comArray);
     fetch("..//.netlify/functions/saveComments", {
       method: "POST",
       body: JSON.stringify(comArray),
