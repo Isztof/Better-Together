@@ -99,7 +99,6 @@ myInput2.onkeyup = function () {
 
 //create a new user account in supabase
 const registerButton = document.querySelector("#postB");
-
 //selectors for the input boxes
 let firstNameInputBox = document.querySelector("#validationCustom01);
 let lastNameInputBox = document.querySelector("#validationCustom02);
@@ -115,6 +114,7 @@ let userNameValue = userNameInputBox.value;
 let emailValue = emailInputBox.value;
 let passwordValue = passwordInputBox.value; 
 
+//create out of the values an array
 
 const userObject = {
 
@@ -124,15 +124,19 @@ const userObject = {
   email: emailValue,
   password: passwordValue ,
 };
-                                               
+
+//fetch the serverless function to save the values in the databse
 
 registerButton.addEventListener("click", function () {
-  fetch("../.netlify/functions/user_profile", {
-    method: "POST",
-    body: userObject,
-  }).then((response) => {
-    response.json();
-    console.log(response);
-  });
-});
+  fetch("../.netlify/functions/user_profile")
+     body: JSON.stringify(userObject)
+     headers: new Headers({
+      "Content-Type": "application/json",
+    }),
+  })
+  .then((response) => response.json())
+  .then((json) => console.log(json))
+  .catch((error) => console.error(error));
+}
+
 
