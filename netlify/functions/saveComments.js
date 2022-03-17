@@ -11,7 +11,7 @@ exports.handler = async function (event, context) {
   // Insert a row
   const body = JSON.parse(event.body);
   console.log(body);
-  const { data, error } = await supabase.from("posts").insert(body);
+  const { data, error } = await supabase.from("comments").insert(body);
 
   if (error) {
     return {
