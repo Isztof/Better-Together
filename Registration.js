@@ -108,7 +108,7 @@ let emailInputBox = document.querySelector("#validationCustomEmail");
 let passwordInputBox = document.querySelector("#psw");
 
 //fetch the serverless function to save the values in the database
-registerButton.addEventListener("onsubmit", function () {
+registerButton.addEventListener("submit", function () {
   //get value of the Input boxes
 
   let firstNameValue = firstNameInputBox.value;
