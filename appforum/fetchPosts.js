@@ -162,8 +162,9 @@ fetch("../.netlify/functions/displayComments")
       <div class="commentText"> ${fetchedComment} </div> 
     `;
       var commentID = item.postIdent;
-      console.log("Comment id:" + commentID);
+      console.log(commentID);
       var commentsSection = document.querySelector(`#${commentID} .comments`);
+      console.log(commentSection);
       commentsSection.appendChild(comment);
     });
   });

@@ -43,6 +43,8 @@ function addComment(element) {
     alert("You cannot post an empty comment!");
   } else {
     var commentsSection = document.querySelector(`#${element} .comments`);
+    console.log(commentsSection);
+    console.log(element);
     commentsSection.appendChild(comment);
   }
 }
