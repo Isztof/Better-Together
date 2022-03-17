@@ -7,7 +7,7 @@ const { createClient } = require("@supabase/supabase-js");
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Our standard serverless handler function
-exports.handler = async (event) => {
+exports.handler = async function (event, context) {
   // Insert a row
   const body = event.body;
   console.log(body);
