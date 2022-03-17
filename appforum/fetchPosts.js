@@ -148,3 +148,24 @@ function resizerSelector(element) {
     // textArea.style.height = `${scHeight}px`;
   });
 }
+
+// display comments saved in the database
+fetch("../.netlify/functions/displayPosts")
+  .then((response) => response.json())
+  .then((json) => {
+    console.log(json);
+    json.forEach((item) => {
+      var comment = document.createElement("div");
+      comment.className = "comment";
+      let fetchedComment = item.comContent;
+      comment.innerHTML = `
+      <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
+      <div class="commentText"> ${inputValue} </div> 
+    `;
+      var commentID = item.id;
+      var commentsSection = document.querySelector(
+        `#post${commentID} .comments`
+      );
+      commentsSection.appendChild(comment);
+    });
+  });
