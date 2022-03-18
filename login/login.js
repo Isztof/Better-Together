@@ -82,7 +82,7 @@ let button = form.submit.addEventListener("click", (e) => {
                 alert("Error Password or Username"); /*displays error message*/
           } else {
                 window.open(
-                    "index.html"
+                    "https://bettter-together-net.netlify.app/index.html"
                 ); /* opens the target page while Id & password matches*/
             }
      })
