@@ -25,7 +25,7 @@ submitButton.addEventListener("click", function () {
     });
 });
 */
-
+/*
 async function login() {
     fetch("/.netlify/functions/getUserAccounts")
       .then((response) => response.json())
@@ -49,26 +49,25 @@ async function login() {
         });
       });
   }
+*/
 
-/*
 const form = {
     
     email: document.querySelector("#exampleInputEmail1"),
     password: document.querySelector("#exampleInputPassword1"),
-    submit: document.querySelector("#post"),
-    messages:document.getElementById("form-messages")
+    submit: document.querySelector("#signin-btn-submit"),
 };
 let button = form.submit.addEventListener("click", (e) => {
     e.preventDefault();
     const login = "https://bettter-together-net.netlify.app/login/login.html";
 
-    fetch("/.netlify/functions/getUserAccounts", {
+    fetch( "/.netlify/functions/getUserAccounts", {
         method: "POST",
         headers: {
             Accept: "application/json, text/plain, */*",
             "Content-Type": "application/json",
         },
-      /*  body: JSON.stringify({
+        body: JSON.stringify({
             email: form.email.value,
             password: form.password.value,
         }),
@@ -77,21 +76,18 @@ let button = form.submit.addEventListener("click", (e) => {
         .then((data) => {
             console.log(data);
             // code here //
-            if (
-            userName == userNameInputBox.value &&
-            password == passwordInputBox.value
+            if  (
+            body.password === data.password
           ) {
             window.open(
-                "/index.html");  /* opens the target page while Id & password matches*/
-             
-         /* } else {
-            alert("Error Password or Username"); /*displays error message*/
-                
-            }
-     })
-       /* .catch((err) => {
+                "/index.html"); 
+          } else {
+            window.open(
+                "index.html"); /*opens the target page while Id & password matches*/
+            
+        }}
+        .catch((err) => {
             console.log(err);
         });
 });
-*/
 
