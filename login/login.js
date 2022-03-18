@@ -26,7 +26,7 @@ submitButton.addEventListener("click", function () {
 });
 */
 
-/*
+
 async function login() {
     fetch("/.netlify/functions/getUserAccounts")
       .then((response) => response.json())
@@ -50,8 +50,8 @@ async function login() {
         });
       });
   }
-  */
-
+ 
+/*
 const form = {
     
     email: document.querySelector("#exampleInputEmail1"),
@@ -89,3 +89,4 @@ let button = form.submit.addEventListener("click", (e) => {
             console.log(err);
         });
 });
+*/
