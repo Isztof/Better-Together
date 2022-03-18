@@ -57,6 +57,7 @@ const form = {
     email: document.querySelector("#exampleInputEmail1"),
     password: document.querySelector("#exampleInputPassword1"),
     submit: document.querySelector("#signin-btn-submit"),
+    messages:document.getElementById("form-messages")
 };
 let button = form.submit.addEventListener("click", (e) => {
     e.preventDefault();
