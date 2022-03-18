@@ -27,7 +27,7 @@ submitButton.addEventListener("click", function () {
 */
 
 async function login() {
-  fetch("../.netlify/functions/getUserAccounts")
+  fetch("/.netlify/functions/getUserAccounts")
     .then((response) => response.json())
     .then((json) => {
       console.log(json);
