@@ -26,7 +26,6 @@ submitButton.addEventListener("click", function () {
 });
 */
 
-/*
 async function login() {
     fetch("/.netlify/functions/getUserAccounts")
       .then((response) => response.json())
@@ -42,15 +41,16 @@ async function login() {
             userName == userNameInputBox.value &&
             password == passwordInputBox.value
           ) {
-           window.location.href =
-              "https://bettter-together-net.netlify.app/index.html";
+            window.open(
+                "/index.html"); 
           } else {
             alert("Username or password is invalid");
           }
         });
       });
   }
-*/ 
+
+/*
 const form = {
     
     email: document.querySelector("#exampleInputEmail1"),
@@ -68,7 +68,7 @@ let button = form.submit.addEventListener("click", (e) => {
             Accept: "application/json, text/plain, */*",
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({
+      /*  body: JSON.stringify({
             email: form.email.value,
             password: form.password.value,
         }),
@@ -84,13 +84,14 @@ let button = form.submit.addEventListener("click", (e) => {
             window.open(
                 "/index.html");  /* opens the target page while Id & password matches*/
              
-          } else {
+         /* } else {
             alert("Error Password or Username"); /*displays error message*/
                 
             }
      })
-        .catch((err) => {
+       /* .catch((err) => {
             console.log(err);
         });
 });
+*/
 
