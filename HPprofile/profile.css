@@ -1,11 +1,12 @@
 body {
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
-  background-color: #e9f3f1;
+  background-color: #5085a5;
+  
 }
 html {
   position: relative;
-  background-color: #e9f3f1;
+  background-color: #5085a5;
 }
 
 #LRPanel {
@@ -18,6 +19,10 @@ html {
   text-align: right;
   background-color: #5085a5;
 }
+
+main {
+min-height: 100vh;
+}
 #LB,
 #RB {
   max-width: 100px;
@@ -25,6 +30,12 @@ html {
   font-size: 15px;
   text-decoration: none;
   padding: 0.5em;
+}
+
+#navbarNav {
+  text-align: left;
+  color: green;
+  justify-content: end;
 }
 
 footer {
@@ -50,12 +61,12 @@ footer {
   }
 
   /* Style the list items */
-  ul li {
+  *header ul li {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
     list-style-type: none;
-    background: #eee;
+    background: #5085a5;
     font-size: 18px;
     transition: 0.2s;
 
@@ -67,8 +78,8 @@ footer {
   }
 
   /* Set all odd list items to a different color (zebra-stripes) */
-  ul li:nth-child(odd) {
-    background: #f9f9f9;
+  *header ul li:nth-child(odd) {
+    background: #5085a5;
   }
 
   /* Darker background-color on hover */
@@ -106,13 +117,13 @@ footer {
   }
 
   .close:hover {
-    background-color: #f44336;
+    background-color: #5085a5;
     color: white;
   }
 
   /* Style the header */
   .header {
-    background-color: #f44336;
+    background-color: #5085a5;
     padding: 30px 40px;
     color: white;
     text-align: center;
