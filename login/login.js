@@ -41,7 +41,7 @@ async function login() {
           userName == userNameInputBox.value &&
           password == passwordInputBox.value
         ) {
-          window.location =
+         window.location.href =
             "https://bettter-together-net.netlify.app/index.html";
         } else {
           alert("Username or password is invalid");
