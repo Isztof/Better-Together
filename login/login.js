@@ -51,7 +51,6 @@ async function login() {
       });
   }
 */ 
-
 const form = {
     
     email: document.querySelector("#exampleInputEmail1"),
@@ -78,12 +77,16 @@ let button = form.submit.addEventListener("click", (e) => {
         .then((data) => {
             console.log(data);
             // code here //
-            if (data.error) {
-                alert("Error Password or Username"); /*displays error message*/
+            if (
+            userName == userNameInputBox.value &&
+            password == passwordInputBox.value
+          ) {
+            window.open(
+                "/index.html");  /* opens the target page while Id & password matches*/
+             
           } else {
-                window.open(
-                    "/index.html"
-                ); /* opens the target page while Id & password matches*/
+            alert("Error Password or Username"); /*displays error message*/
+                
             }
      })
         .catch((err) => {
