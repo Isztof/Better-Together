@@ -164,3 +164,10 @@ function resizerSelector(element) {
     // textArea.style.height = `${scHeight}px`;
   });
 }
+
+let now = new Date();
+var dateString = moment(now).format("YYYY-MM-DD");
+console.log(dateString);
+
+var dateStringWithTime = moment(now).format("YYYY-MM-DD HH:MM:SS");
+console.log("date" + dateStringWithTime); // Output: 2020-07-21 07:24:06
