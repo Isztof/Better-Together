@@ -27,28 +27,28 @@ submitButton.addEventListener("click", function () {
 */
 /*
 async function login() {
-    fetch("/.netlify/functions/getUserAccounts")
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-        json.forEach((item) => {
-          let userName = item.display_name;
-          let password = item.password;
-          let userNameInputBox = document.querySelector("#exampleInputEmail1");
-          let passwordInputBox = document.querySelector("#exampleInputPassword1");
-          console.log(userName == userNameInputBox.value);
-          if (
-            userName == userNameInputBox.value &&
-            password == passwordInputBox.value
-          ) {
-            window.open(
-                "/index.html"); 
-          } else {
-            alert("Username or password is invalid");
-          }
-        });
+  fetch("/.netlify/functions/getUserAccounts")
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+      json.forEach((item) => {
+        let userName = item.display_name;
+        let password = item.password;
+        let userNameInputBox = document.querySelector("#exampleInputEmail1");
+        let passwordInputBox = document.querySelector("#exampleInputPassword1");
+        console.log(userName == userNameInputBox.value);
+        if (
+          userName == userNameInputBox.value &&
+          password == passwordInputBox.value
+        ) {
+          window.open(
+            "/index.html");
+        } else {
+          alert("Username or password is invalid");
+        }
       });
-  }
+    });
+}
 */
 
 const form = {
@@ -74,19 +74,24 @@ let button = form.submit.addEventListener("click", (e) => {
     }),
   })
     .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      // code here //
-      if (
-        userName == userNameInputBox.value &&
-        password == passwordInputBox.value
-      ) {
-        window.open(
-          "/index.html");
-      } else {
-        alert("Username or password is invalid");
-      }
-
+    .then((json) => {
+      console.log(json);
+      json.forEach((item) => {
+        let userName = item.display_name;
+        let password = item.password;
+        let userNameInputBox = document.querySelector("#exampleInputEmail1");
+        let passwordInputBox = document.querySelector("#exampleInputPassword1");
+        console.log(userName == userNameInputBox.value);
+        if (
+          userName == userNameInputBox.value &&
+          password == passwordInputBox.value
+        ) {
+          window.open(
+            "/index.html");
+        } else {
+          alert("Username or password is invalid");
+        }
+      });
     });
 });
 
