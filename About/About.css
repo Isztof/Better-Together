@@ -1,24 +1,25 @@
 html {
   /* position: 100% !important; */
-  background-color: #e9f3f1 !important;
+  background-color: #dfebe854 !important;
 }
 
 body {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
   font-size: 15px;
-  background-color: #e9f3f1;
+  background-color: #dfebe854;
   position: relative;
   padding-bottom: 93px;
   min-height: 100vh;
 }
 
 main {
-  width: 90vw;
   margin: 0 auto;
   padding: 30px 20px;
   /* min-height: calc(100vh - 112px - 92,7); */
   min-height: 100vh;
+  background-color: #dfebe854;
+  padding-left: 230px;
 }
 
 header {
@@ -30,6 +31,7 @@ h1 {
   text-align: center;
   font-weight: 700;
   margin: 4rem;
+  padding-top: 30px;
 }
 h2 {
   font-weight: 500;
