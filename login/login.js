@@ -78,7 +78,8 @@ let button = form.submit.addEventListener("click", (e) => {
       console.log(data);
       // code here //
       if (
-        body.password === data.password
+        userName == userNameInputBox.value &&
+        password == passwordInputBox.value
       ) {
         window.open(
           "/index.html");
