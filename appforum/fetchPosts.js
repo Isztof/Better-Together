@@ -3,7 +3,7 @@ var id = 1;
 // display comments saved in the database
 async function fetchPostsWithComments() {
   await getPosts().then((result) => {
-    var timeout = setTimeout(getComments, 3000);
+    var timeout = setTimeout(getComments, 2300);
   });
 }
 

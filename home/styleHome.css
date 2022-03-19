@@ -1,20 +1,39 @@
 body {
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
+  background-color: #e9f3f1;
 }
 html {
   position: relative;
+  background-color: #e9f3f1;
 }
-header {
+
+#LRPanel {
+  text-align: right;
+  padding-top: 15px;
+  padding-bottom: 1.2em;
+}
+
+#header {
+  text-align: right;
   background-color: #5085a5;
-  font-size: 15px;
 }
+#LB,
+#RB {
+  max-width: 100px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 0.5em;
+}
+
 footer {
   background-color: #5085a5;
   padding: 2.2em 2.2em;
   width: 100%;
+  max-height: 300px;
   bottom: 0;
-  font-size: 12.5px;
+  font-size: 13px;
   position: absolute;
   bottom: 0px;
 }
@@ -32,13 +51,11 @@ footer {
 #register2:hover {
   opacity: 0.8;
 }
-img{
+img {
   width: 10% !important;
   height: auto !important;
   display: block;
-  margin-left:auto;
+  margin-left: auto;
   margin-top: 1rem;
   margin-right: auto;
-  
-
 }
