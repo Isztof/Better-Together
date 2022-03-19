@@ -1,4 +1,3 @@
-console.log("Hello Word");
 //Global Selectors
 const main = document.querySelector("main");
 const postB = document.querySelector("#postB");
