@@ -123,3 +123,12 @@ footer {
   padding: 0px 55px;
   font-size: 19px;
 }
+
+@media (max-width: 940px) {
+  main {
+    min-height: 150vh;
+  }
+  body {
+    min-height: 200vh;
+  }
+}
