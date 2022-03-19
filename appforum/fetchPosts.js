@@ -1,8 +1,8 @@
 var id = 1;
 
 async function fetchPosts() {
-  await getPosts();
-  fetchComments();
+  getPosts();
+  await fetchComments();
 }
 
 async function getPosts() {
