@@ -4,7 +4,9 @@ const { createClient } = require("@supabase/supabase-js");
 const _supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 exports.handler = async function (event, body) {
-    const { data, error } = await _supabase.from("User_Accounts").select();
+    const user = JSON.parse(event.body);
+    const { data, error } = await _supabase.from("User_Accounts").select('display_name,password')
+        .eq('display_name', user.display_name);
 
     if (error) {
         return {
@@ -12,7 +14,12 @@ exports.handler = async function (event, body) {
             body: JSON.stringify(error),
         };
     }
-
+    if (user.display_name !== data.password) {
+        return {
+            statuscode: 401,
+            body: JSON.stringify({ message: 'User not authorized' }),
+        };
+    }
     return {
         statusCode: 200,
         body: JSON.stringify(data),
