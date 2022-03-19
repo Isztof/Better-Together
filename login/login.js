@@ -62,7 +62,7 @@ let button = form.submit.addEventListener("click", (e) => {
   e.preventDefault();
   const login = "https://bettter-together-net.netlify.app/login/login.html";
 
-  fetch("/.netlify/functions/getUserAccounts", {
+  fetch("/.netlify/functions/getUserAccounts.js", {
     method: "POST",
     headers: {
       Accept: "application/json, text/plain, */*",
