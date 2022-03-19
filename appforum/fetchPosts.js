@@ -1,8 +1,29 @@
 var id = 1;
 
-async function fetchPosts() {
-  getPosts();
-  await fetchComments();
+// display comments saved in the database
+async function fetchComments() {
+  const result = await getPosts();
+  fetch("../.netlify/functions/displayComments")
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+      json.forEach((item) => {
+        var comment = document.createElement("div");
+        comment.className = "comment";
+        let fetchedComment = item.comContent;
+        let fetchedCommentDate = item.createdAt;
+        comment.innerHTML = `
+      <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
+      <div class="comDateTag"> ${fetchedCommentDate}</div> 
+      <div class="commentText"> ${fetchedComment} </div> 
+    `;
+        var commentID = item.postIdent;
+        console.log(commentID);
+        var commentsSection = document.querySelector(`#${commentID} .comments`);
+        console.log(commentsSection);
+        commentsSection.appendChild(comment);
+      });
+    });
 }
 
 async function getPosts() {
@@ -86,32 +107,7 @@ async function getPosts() {
     });
 }
 
-// display comments saved in the database
-async function fetchComments() {
-  fetch("../.netlify/functions/displayComments")
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
-      json.forEach((item) => {
-        var comment = document.createElement("div");
-        comment.className = "comment";
-        let fetchedComment = item.comContent;
-        let fetchedCommentDate = item.createdAt;
-        comment.innerHTML = `
-      <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
-      <div class="comDateTag"> ${fetchedCommentDate}</div> 
-      <div class="commentText"> ${fetchedComment} </div> 
-    `;
-        var commentID = item.postIdent;
-        console.log(commentID);
-        var commentsSection = document.querySelector(`#${commentID} .comments`);
-        console.log(commentsSection);
-        commentsSection.appendChild(comment);
-      });
-    });
-}
-
-fetchPosts();
+fetchComments();
 
 function readMore(element) {
   let spanToShow = document.querySelector(`#${element} .secondPart`);
