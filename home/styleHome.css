@@ -53,7 +53,7 @@ footer {
   opacity: 0.8;
 }
 img {
-  width: 10% !important;
+  width: 20% !important;
   height: auto !important;
   display: block;
   margin-left: auto;
@@ -63,7 +63,7 @@ img {
 
 main {
   min-height: 100vh;
-  padding-top: 180px;
+  padding-top: 2rem;
   background-color: #dfebe854;
 }
 
