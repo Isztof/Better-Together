@@ -1,3 +1,4 @@
+const moment = require("moment");
 var id = 1;
 
 // display comments saved in the database
