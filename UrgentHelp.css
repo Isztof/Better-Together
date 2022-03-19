@@ -70,3 +70,22 @@ footer {
 #register2:hover {
   opacity: 0.8;
 }
+
+#LRPanel {
+  text-align: right;
+  padding-top: 15px;
+  padding-bottom: 1.2em;
+}
+
+header {
+  text-align: right;
+  background-color: #5085a5;
+}
+#LB,
+#RB {
+  max-width: 100px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 0.5em;
+}
