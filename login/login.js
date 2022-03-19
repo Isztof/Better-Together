@@ -52,40 +52,41 @@ async function login() {
 */
 
 const form = {
-    
-    email: document.querySelector("#exampleInputEmail1"),
-    password: document.querySelector("#exampleInputPassword1"),
-    submit: document.querySelector("#signin-btn-submit"),
+
+  email: document.querySelector("#exampleInputEmail1"),
+  password: document.querySelector("#exampleInputPassword1"),
+  submit: document.querySelector("#signin-btn-submit"),
+  messages: document.getElementById("form-messages"),
 };
 let button = form.submit.addEventListener("click", (e) => {
-    e.preventDefault();
-    const login = "https://bettter-together-net.netlify.app/login/login.html";
+  e.preventDefault();
+  const login = "https://bettter-together-net.netlify.app/login/login.html";
 
-    fetch( "/.netlify/functions/getUserAccounts", {
-        method: "POST",
-        headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            email: form.email.value,
-            password: form.password.value,
-        }),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-            // code here //
-            if  (
-            body.password === data.password
-          ) {
-            window.open(
-                "/index.html"); 
-          } else {
-            alert("Username or password is invalid");
-            }
-      
-        });
+  fetch("/.netlify/functions/getUserAccounts", {
+    method: "POST",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: form.email.value,
+      password: form.password.value,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      // code here //
+      if (
+        body.password === data.password
+      ) {
+        window.open(
+          "/index.html");
+      } else {
+        alert("Username or password is invalid");
+      }
+
+    });
 });
 
 
