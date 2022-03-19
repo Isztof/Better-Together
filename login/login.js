@@ -62,7 +62,7 @@ let button = form.submit.addEventListener("click", (e) => {
   e.preventDefault();
   const login = "https://bettter-together-net.netlify.app/login/login.html";
 
-  fetch("/.netlify/functions/getUserAccounts.js", {
+  fetch("/.netlify/functions/getUserAccounts", {
     method: "POST",
     headers: {
       Accept: "application/json, text/plain, */*",
@@ -81,7 +81,6 @@ let button = form.submit.addEventListener("click", (e) => {
         let password = item.password;
         let userNameInputBox = document.querySelector("#exampleInputEmail1");
         let passwordInputBox = document.querySelector("#exampleInputPassword1");
-        console.log(userName == userNameInputBox.value);
         if (
           userName == userNameInputBox.value &&
           password == passwordInputBox.value
