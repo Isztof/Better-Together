@@ -81,8 +81,7 @@ let button = form.submit.addEventListener("click", (e) => {
         let password = item.password;
         let userNameInputBox = document.querySelector("#exampleInputEmail1");
         let passwordInputBox = document.querySelector("#exampleInputPassword1");
-        console.log(userName == userNameInputBox.value,
-          password == passwordInputBox.value);
+        console.log(userName == userNameInputBox.value);
         if (
           userName == userNameInputBox.value &&
           password == passwordInputBox.value
