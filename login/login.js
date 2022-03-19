@@ -82,12 +82,10 @@ let button = form.submit.addEventListener("click", (e) => {
             window.open(
                 "/index.html"); 
           } else {
-            window.open(
-                "index.html"); /*opens the target page while Id & password matches*/
-            
-        }}
-        .catch((err) => {
-            console.log(err);
+            alert("Username or password is invalid");
+            }
+      
         });
 });
+
 
