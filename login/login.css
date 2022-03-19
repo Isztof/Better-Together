@@ -14,7 +14,7 @@ html {
   padding-bottom: 1.2em;
 }
 
-#header {
+header {
   text-align: right;
   background-color: #5085a5;
 }
@@ -48,5 +48,6 @@ footer {
 }
 
 #main {
-  padding-top: 80px;
+  padding-top: 220px;
+  min-height: 100vh;
 }
