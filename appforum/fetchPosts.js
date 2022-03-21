@@ -140,6 +140,7 @@ function addComment(element) {
   var comInput = document.querySelector(`#${element} .areaT`);
   console.log(element);
   let inputValue = comInput.value;
+  let now = new Date();
   var comDate = moment(now).format("YYYY-MM-DD HH:MM:SS");
   comment.innerHTML = `
         <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
