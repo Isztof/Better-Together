@@ -79,6 +79,7 @@ let button = form.submit.addEventListener("click", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
+      console.log(data.display_name, data.password, userNameInputBox.value, passwordInputBox.value)
       if (data.display_name == userNameInputBox.value &&
         data.password == passwordInputBox.value) {
         window.open('/index.html');  /*opens the target page while Id & password matches*/
