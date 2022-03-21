@@ -52,7 +52,6 @@ async function login() {
 */
 
 const form = {
-
   email: document.querySelector("#exampleInputEmail1"),
   password: document.querySelector("#exampleInputPassword1"),
   submit: document.querySelector("#post"),
@@ -79,13 +78,19 @@ let button = form.submit.addEventListener("click", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.display_name, data.password, userNameInputBox.value, passwordInputBox.value)
-      if (data.display_name == userNameInputBox.value &&
+      console.log(data);
+      console.log(
+        data.display_name,
+        data.password,
+        userNameInputBox.value,
+        passwordInputBox.value
+      );
+      /*if (data.display_name == userNameInputBox.value &&
         data.password == passwordInputBox.value) {
-        window.open('/index.html');  /*opens the target page while Id & password matches*/
+        window.open('/index.html'); 
       } else {
-        alert("Error Password or Username");/*displays error message*/
-      }
+        alert("Error Password or Username");
+      }displays error message*/
     })
     .catch((err) => {
       console.log(err);
