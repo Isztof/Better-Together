@@ -75,11 +75,10 @@ let button = form.submit.addEventListener("click", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      if (data.error) {
+      if (user.display_name !== data.password) {
         alert("Error Password or Username"); /*displays error message*/
       } else {
-        window.open('/index.html'
-        ); /*opens the target page while Id & password matches*/
+        window.open('/index.html'); /*opens the target page while Id & password matches*/
       }
     })
     .catch((err) => {
