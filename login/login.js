@@ -75,12 +75,10 @@ let button = form.submit.addEventListener("click", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      // code here //
       if (data.error) {
         alert("Error Password or Username"); /*displays error message*/
       } else {
-        window.open('/index.html"'
+        window.open('/index.html'
         ); /*opens the target page while Id & password matches*/
       }
     })
