@@ -6,7 +6,7 @@ const _supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 exports.handler = async function (event, body) {
     const user = JSON.parse(event.body);
     const { data, error } = await _supabase.from("User_Accounts").select('display_name,password')
-        .eq('display_name', user.display_name);
+        .eq('display_name', user.email);
 
     console.log(data)
 
@@ -16,7 +16,7 @@ exports.handler = async function (event, body) {
             body: JSON.stringify(error),
         };
     }
-    if (user.display_name !== data.password) {
+    if (user.email !== data.password) {
         return {
             statuscode: 401,
             body: JSON.stringify({ message: 'User not authorized' }),
