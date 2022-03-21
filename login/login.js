@@ -81,9 +81,9 @@ let button = form.submit.addEventListener("click", (e) => {
     .then((data) => {
       if (data.display_name == userNameInputBox.value &&
         data.password == passwordInputBox.value) {
-        alert("Error Password or Username"); /*displays error message*/
+        window.open('/index.html');  /*opens the target page while Id & password matches*/
       } else {
-        window.open('/index.html'); /*opens the target page while Id & password matches*/
+        alert("Error Password or Username");/*displays error message*/
       }
     })
     .catch((err) => {
