@@ -58,6 +58,10 @@ const form = {
   submit: document.querySelector("#post"),
   messages: document.getElementById("form-messages"),
 };
+
+let userNameInputBox = document.querySelector("#exampleInputEmail1");
+let passwordInputBox = document.querySelector("#exampleInputPassword1");
+
 let button = form.submit.addEventListener("click", (e) => {
   e.preventDefault();
   const login = "https://bettter-together-net.netlify.app/login/login.html";
@@ -75,8 +79,8 @@ let button = form.submit.addEventListener("click", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      if (userName == userNameInputBox.value &&
-        password == passwordInputBox.value) {
+      if (data.display_name == userNameInputBox.value &&
+        data.password == passwordInputBox.value) {
         alert("Error Password or Username"); /*displays error message*/
       } else {
         window.open('/index.html'); /*opens the target page while Id & password matches*/
