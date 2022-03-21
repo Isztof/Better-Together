@@ -1,4 +1,3 @@
-//const moment = require("moment");
 var id = 1;
 
 // display comments saved in the database
@@ -43,7 +42,7 @@ async function getPosts() {
                 <img class="picture" src="/imgs/50x50picture.png" alt="">
                 <!-- <div class="picture" ></div> -->
                  <div class="authorTag">John Doe</div>
-                 <div class="dateTag">${created_at}</div>
+                 <div class="dateTag">${postDate}</div>
                  <h4 class="noteTitle" > ${postTitle}</h4> 
                </div>
                  <div class="noteDescription"> <span> ${postDescription} </span> <span class="readMoreTag" onclick="readMore('${`post${id}`}')">...Read more</span> <span class="secondPart">${secondSpan}</span></div> 
@@ -58,7 +57,7 @@ async function getPosts() {
                 <img class="picture" src="/imgs/50x50picture.png" alt="">
                 <!-- <div class="picture" ></div> -->
                  <div class="authorTag">John Doe</div>
-                 <div class="dateTag">27.01.2021 21:49</div>
+                 <div class="dateTag">${postDate}</div>
                  <h4 class="noteTitle" > ${postTitle}</h4> 
                </div>
                  <div class="noteDescription">  ${postDescription}  </div> 
@@ -141,8 +140,10 @@ function addComment(element) {
   var comInput = document.querySelector(`#${element} .areaT`);
   console.log(element);
   let inputValue = comInput.value;
+  var comDate = moment(now).format("YYYY-MM-DD HH:MM:SS");
   comment.innerHTML = `
         <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
+        <div class="comDateTag"> ${comDate}</div> 
         <div class="commentText"> ${inputValue} </div> 
       `;
   if (inputValue === "") {
@@ -150,7 +151,9 @@ function addComment(element) {
   } else {
     var commentsSection = document.querySelector(`#${element} .comments`);
     commentsSection.appendChild(comment);
-    let comArray = [{ comContent: inputValue, postIdent: element }];
+    let comArray = [
+      { createdAt: comDate, comContent: inputValue, postIdent: element },
+    ];
     console.log(comArray);
     fetch("..//.netlify/functions/saveComments", {
       method: "POST",
@@ -187,9 +190,12 @@ function resizerSelector(element) {
 
 console.log(moment());
 
+//Moment library dates
+/* 
 let now = new Date();
 var dateString = moment(now).format("YYYY-MM-DD");
 console.log(dateString);
 
-var dateStringWithTime = moment(now).format("YYYY-MM-DD HH:MM:SS");
+
 console.log(dateStringWithTime); // Output: 2020-07-21 07:24:06
+*/

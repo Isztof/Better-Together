@@ -8,9 +8,11 @@ const postB2 = document.querySelector("#postB");
 function addingPost() {
   let postTitle2 = postTitleInput2.value;
   let postDescription2 = postDescriptionInput2.value;
-
+  var date = moment(now).format("YYYY-MM-DD HH:MM:SS");
   // we create the js  array containing js objects
-  let array = [{ title: postTitle2, content: postDescription2 }];
+  let array = [
+    { title: postTitle2, content: postDescription2, created_at: date },
+  ];
   // print out the array
   console.log(array);
   // fetch the serverless function to pass the array to the database
