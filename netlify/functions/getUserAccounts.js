@@ -8,6 +8,8 @@ exports.handler = async function (event, body) {
     const { data, error } = await _supabase.from("User_Accounts").select('display_name,password')
         .eq('display_name', user.display_name);
 
+    console.log(data)
+
     if (error) {
         return {
             statusCode: 500,

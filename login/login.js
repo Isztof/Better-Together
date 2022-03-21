@@ -81,19 +81,15 @@ let button = form.submit.addEventListener("click", (e) => {
         let password = item.password;
         let userNameInputBox = document.querySelector("#exampleInputEmail1");
         let passwordInputBox = document.querySelector("#exampleInputPassword1");
-        console.log(userName + " " + password);
-        console.log(userNameInputBox.value + " " + passwordInputBox.value);
         if (
           userName == userNameInputBox.value &&
           password == passwordInputBox.value
         ) {
           window.open(
-            "/index.html");
+            '/index.html');
         } else {
           alert("Username or password is invalid");
         }
       });
     });
 });
-
-
