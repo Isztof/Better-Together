@@ -78,26 +78,16 @@ let button = form.submit.addEventListener("click", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      fetch("/.netlify/functions/getUserAccounts")
-        .then((response) => response.json())
-        .then((json) => {
-          console.log(json);
-          console.log(
-            data.display_name,
-            data.password,
-            userNameInputBox.value,
-            passwordInputBox.value
-          );
-          /*if (data.display_name == userNameInputBox.value &&
-        data.password == passwordInputBox.value) {
-        window.open('/index.html'); 
+      console.log(data)
+      if (data) {
+        window.open('/index.html');  /*opens the target page while Id & password matches*/
       } else {
-        alert("Error Password or Username");
-      }displays error message*/
-        })
-        .catch((err) => {
-          console.log(err);
-          alert("Error Password or Username");
-        });
+        alert("Error Password or Username");/*displays error message*/
+      }
+    })
+    .catch((err) => {
+      console.log(err);
     });
 });
+
+
