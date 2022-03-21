@@ -74,22 +74,17 @@ let button = form.submit.addEventListener("click", (e) => {
     }),
   })
     .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
-      json.forEach((item) => {
-        let userName = item.display_name;
-        let password = item.password;
-        let userNameInputBox = document.querySelector("#exampleInputEmail1");
-        let passwordInputBox = document.querySelector("#exampleInputPassword1");
-        if (
-          userName == userNameInputBox.value &&
-          password == passwordInputBox.value
-        ) {
-          window.open(
-            '/index.html');
-        } else {
-          alert("Username or password is invalid");
-        }
-      });
+    .then((data) => {
+      console.log(data);
+      // code here //
+      if (data.error) {
+        alert("Error Password or Username"); /*displays error message*/
+      } else {
+        window.open('/index.html"'
+        ); /*opens the target page while Id & password matches*/
+      }
+    })
+    .catch((err) => {
+      console.log(err);
     });
 });
