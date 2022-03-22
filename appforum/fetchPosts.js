@@ -11,7 +11,6 @@ async function getPosts() {
   fetch("../.netlify/functions/displayPosts")
     .then((response) => response.json())
     .then((json) => {
-      console.log(json);
       json.forEach((item) => {
         let postDescription = item.content;
         let postTitle = item.title;
@@ -23,12 +22,8 @@ async function getPosts() {
         let addReadMore = false;
         var secondSpan;
 
-        console.log(postDescription);
-        //var count = Object.keys(postDescription).length;
-        //console.log(count);
         try {
           let count = postDescription.length;
-          console.log(count);
           if (count > 1250) {
             const firstSpan = postDescription.substring(0, 1250);
             secondSpan = postDescription.substring(1250, count);
@@ -92,7 +87,6 @@ async function getComments() {
   fetch("../.netlify/functions/displayComments")
     .then((response) => response.json())
     .then((json) => {
-      console.log(json);
       json.forEach((item) => {
         var comment = document.createElement("div");
         comment.className = "comment";
@@ -104,9 +98,7 @@ async function getComments() {
       <div class="commentText"> ${fetchedComment} </div> 
       `;
         var commentID = item.postIdent;
-        console.log(commentID);
         var commentsSection = document.querySelector(`#${commentID} .comments`);
-        console.log(commentsSection);
         commentsSection.appendChild(comment);
       });
     });
@@ -124,7 +116,6 @@ function readMore(element) {
 // open the panel function
 function showPanel(element) {
   let panel = document.querySelector(`#${element} .panel`);
-  console.log(panel);
   panel.className = "panel";
   if (panel.style.display === "block") {
     panel.style.display = "none";
@@ -138,10 +129,11 @@ function addComment(element) {
   var comment = document.createElement("div");
   comment.className = "comment";
   var comInput = document.querySelector(`#${element} .areaT`);
-  console.log(element);
   let inputValue = comInput.value;
-  let now = new Date();
-  var comDate = moment(now).format("YYYY-MM-DD HH:MM:SS");
+  var now = new Date();
+  var comDate = moment(now).format("LLL");
+  console.log(comDate);
+  console.log(now);
   comment.innerHTML = `
         <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
         <div class="comDateTag"> ${comDate}</div> 
@@ -188,8 +180,6 @@ function resizerSelector(element) {
     textArea.style.height = `${scHeight}px`;
   });
 }
-
-console.log(moment());
 
 //Moment library dates
 /* 

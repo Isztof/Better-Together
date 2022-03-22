@@ -1,11 +1,9 @@
 body {
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
-  background-color: #e9f3f1;
 }
 html {
   position: relative;
-  background-color: #dfebe854;
 }
 
 #LRPanel {
