@@ -80,7 +80,7 @@ let button = form.submit.addEventListener("click", (e) => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
-      if (data.statusCode === 200) {
+      if (data.length) {
         window.open('/index.html');  /*opens the target page while Id & password matches*/
       } else {
         alert("Error Password or Username");/*displays error message*/
