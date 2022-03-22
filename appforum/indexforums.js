@@ -9,9 +9,7 @@ function addingPost() {
   let postTitle2 = postTitleInput2.value;
   let postDescription2 = postDescriptionInput2.value;
   var now = new Date();
-  var date = moment(now).format("YYYY.MM.DD HH:MM:SS");
-  console.log(date);
-  console.log(now);
+  var date = moment(now).format("LLL");
   // we create the js  array containing js objects
   let array = [
     { title: postTitle2, content: postDescription2, created_at: date },

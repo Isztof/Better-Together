@@ -131,7 +131,7 @@ function addComment(element) {
   var comInput = document.querySelector(`#${element} .areaT`);
   let inputValue = comInput.value;
   var now = new Date();
-  var comDate = moment(now).format("YYYY.MM.DD HH:MM:SS");
+  var comDate = moment(now).format("LLL");
   console.log(comDate);
   console.log(now);
   comment.innerHTML = `
