@@ -12,7 +12,7 @@ exports.handler = async function (event, body) {
 
 
 
-    console.log(data)
+    console.log(user, data)
 
     if (error) {
         return {
