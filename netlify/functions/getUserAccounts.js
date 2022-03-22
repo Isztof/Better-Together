@@ -20,7 +20,7 @@ exports.handler = async function (event, body) {
             body: JSON.stringify(error),
         };
     }
-    //if its empty it did not find the user password
+    //0 means its empty; empfty means it did not find the user password
     if (data.length == 0) {
         return {
             statuscode: 401,
