@@ -8,6 +8,7 @@ exports.handler = async function (event, body) {
     const { data, error } = await _supabase.from("User_Accounts").select('display_name,password')
         .eq('display_name', user.display_name);
 
+
     console.log(data)
 
     if (error) {
@@ -16,7 +17,8 @@ exports.handler = async function (event, body) {
             body: JSON.stringify(error),
         };
     }
-    if (user.display_name !== data.password) {
+    if (user.display_name !== display_name,
+        password !== data.password) {
         return {
             statuscode: 401,
             body: JSON.stringify({ message: 'User not authorized' }),
