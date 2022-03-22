@@ -17,17 +17,31 @@ function addingPost() {
   // print out the array
   console.log(array);
   // fetch the serverless function to pass the array to the database
-  fetch("..//.netlify/functions/createPosts", {
-    method: "POST",
-    body: JSON.stringify(array),
-    headers: new Headers({
-      "Content-Type": "application/json",
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => console.log(json))
-    .catch((error) => console.error(error));
+  if (postTitle2 == "") {
+    alert("Your post has to have a title");
+  } else if (postDescription2 == "") {
+    alert("Your post has to have a description");
+  } else {
+    fetch("..//.netlify/functions/createPosts", {
+      method: "POST",
+      body: JSON.stringify(array),
+      headers: new Headers({
+        "Content-Type": "application/json",
+      }),
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        alert("Your question has been posted successfully to our Forum");
+        takeToForum();
+      })
+      .catch((error) => console.error(error));
+  }
 }
 
 // we activate this function every time the user clicks on the share button so every time when he creates a new share
 postB2.addEventListener("click", addingPost);
+
+function takeToForum() {
+  window.location.href = "/appforum/indexForum.html";
+}
