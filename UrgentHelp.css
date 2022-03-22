@@ -13,15 +13,6 @@ body {
   min-height: 100vh;
 }
 
-main {
-  margin: 0 auto;
-  padding: 30px 40px;
-  /* min-height: calc(100vh - 112px - 92,7); */
-  background-color: #dfebe854;
-  padding-left: 70px;
-  padding-bottom: 200px;
-}
-
 header {
   background-color: #5085a5;
   font-size: 15px;
@@ -88,4 +79,17 @@ header {
   font-size: 15px;
   text-decoration: none;
   padding: 0.5em;
+}
+
+main {
+  margin: 0 auto;
+  padding: 7em 6em 15em 7em;
+  background-color: #dfebe854 !important;
+  min-height: 120vh;
+}
+
+@media (max-width: 1000px) {
+  main {
+    padding: 2.5em 6em 15em 2.5em;
+  }
 }
