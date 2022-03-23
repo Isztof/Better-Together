@@ -1,11 +1,21 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+//selectors for the input boxes
+let firstNameInputBox = document.querySelector("#validationCustom01");
+let lastNameInputBox = document.querySelector("#validationCustom02");
+let userNameInputBox = document.querySelector("#validationCustomUsername");
+let emailInputBox = document.querySelector("#validationCustomEmail");
+let passwordInputBox = document.querySelector("#psw");
+
+//Boolean value that will be set to false if a form is not validated
+var createUserAccount = true;
+
+//  JavaScript for disabling form submissions if there are invalid fields
 (function () {
   "use strict";
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   var forms = document.querySelectorAll(".needs-validation");
 
-  // Fetch the password forms we ant to aplly special validation styles
+  // Fetch the password forms we want to aplly special validation styles
 
   var pswForms = document.querySelector("#psw");
   var pswForms2 = document.querySelector("#psw2");
@@ -18,8 +28,8 @@
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();
+          createUserAccount = false;
         }
-
         form.classList.add("was-validated");
       },
       false
@@ -97,45 +107,47 @@ myInput2.onkeyup = function () {
   }
 };
 
-//create a new user account in supabase
-const registerButton = document.querySelector("#postB");
+function createNewUserAccount(event) {
+  console.log(createUserAccount);
 
-//selectors for the input boxes
-let firstNameInputBox = document.querySelector("#validationCustom01");
-let lastNameInputBox = document.querySelector("#validationCustom02");
-let userNameInputBox = document.querySelector("#validationCustomUsername");
-let emailInputBox = document.querySelector("#validationCustomEmail");
-let passwordInputBox = document.querySelector("#psw");
+  if (createUserAccount) {
+    //Get value of the input fields
+    let firstNameValue = firstNameInputBox.value;
+    let lastNameValue = lastNameInputBox.value;
+    let userNameValue = userNameInputBox.value;
+    let emailValue = emailInputBox.value;
+    let passwordValue = passwordInputBox.value;
 
-//fetch the serverless function to save the values in the database
-//registerButton.addEventListener("submit", function () {
-function postAccount() {
-  //get value of the Input boxes
+    //Create an array out of the values an array
+    const userObject = [
+      {
+        display_name: userNameValue,
+        first_name: firstNameValue,
+        last_name: lastNameValue,
+        email: emailValue,
+        password: passwordValue,
+      },
+    ];
 
-  let firstNameValue = firstNameInputBox.value;
-  let lastNameValue = lastNameInputBox.value;
-  let userNameValue = userNameInputBox.value;
-  let emailValue = emailInputBox.value;
-  let passwordValue = passwordInputBox.value;
-
-  //create out of the values an array
-
-  const userObject = {
-    display_name: userNameValue,
-    first_name: firstNameValue,
-    last_name: lastNameValue,
-    email: emailValue,
-    password: passwordValue,
-  };
-
-  fetch("../.netlify/functions/user_profile", {
-    method: "POST",
-    body: JSON.stringify(userObject),
-    headers: new Headers({
-      "Content-Type": "application/json",
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => console.log(json))
-    .catch((error) => console.error(error));
+    //Create a new user account in supabase
+    fetch("../.netlify/functions/user_profile", {
+      method: "POST",
+      body: JSON.stringify(userObject),
+      headers: new Headers({
+        "Content-Type": "application/json",
+      }),
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json))
+      .catch((error) => console.error(error));
+  } else {
+    event.preventDefault();
+    event.stopPropagation();
+  }
 }
+//Select the form
+const entireForm = document.querySelector(".needs-validation");
+
+entireForm.addEventListener("submit", createNewUserAccount);
+
+console.log(createUserAccount);
