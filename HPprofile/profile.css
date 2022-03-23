@@ -18,10 +18,10 @@ html {
 }
 
 main {
-  min-height: 130vh;
+  min-height: 150vh;
   margin: 0 auto;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   width: 65%;
 }
 #LB,
