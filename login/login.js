@@ -79,16 +79,17 @@ let button = form.submit.addEventListener("click", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data)
+      console.log(data);
       if (data.length) {
-        window.open('/index.html');  /*opens the target page while Id & password matches*/
+        alert("You've been logged in successfully");
+        window.open(
+          "/index.html"
+        ); /*opens the target page while Id & password matches*/
       } else {
-        alert("Error Password or Username");/*displays error message*/
+        alert("Error Password or Username"); /*displays error message*/
       }
     })
     .catch((err) => {
       console.log(err);
     });
 });
-
-
