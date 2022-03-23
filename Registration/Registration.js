@@ -15,11 +15,6 @@ var createUserAccount = true;
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   var forms = document.querySelectorAll(".needs-validation");
 
-  // Fetch the password forms we want to aplly special validation styles
-
-  var pswForms = document.querySelector("#psw");
-  var pswForms2 = document.querySelector("#psw2");
-
   // Loop over them and prevent submission
   Array.prototype.slice.call(forms).forEach(function (form) {
     form.addEventListener(
@@ -30,7 +25,7 @@ var createUserAccount = true;
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();
-          createUserAccount = false;
+          createUserAccount = false; // disable the creation of a new user accout if a value inside a input field is invalid
         }
         form.classList.add("was-validated");
       },
@@ -38,6 +33,11 @@ var createUserAccount = true;
     );
   });
 })();
+
+// Fetch the password forms we want to aplly special validation styles
+
+var pswForms = document.querySelector("#psw");
+var pswForms2 = document.querySelector("#psw2");
 
 // password validation
 
@@ -141,7 +141,13 @@ function createNewUserAccount(event) {
       }),
     })
       .then((response) => response.json())
-      .then((json) => console.log(json))
+      .then((json) => {
+        console.log(json);
+        alert(
+          "You've been successfully registered. You can now log in your new account"
+        );
+        redirectToLogin();
+      })
       .catch((error) => console.error(error));
   } else {
     console.log("invalid user data");
@@ -153,3 +159,7 @@ const entireForm = document.querySelector(".needs-validation");
 entireForm.addEventListener("submit", createNewUserAccount);
 
 console.log(createUserAccount);
+
+function redirectToLogin() {
+  window.location.href = "/login/login.html";
+}
