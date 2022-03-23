@@ -25,6 +25,8 @@ var createUserAccount = true;
     form.addEventListener(
       "submit",
       function (event) {
+        // reset createUserAccount value every time the form is submitted
+        createUserAccount = true;
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();
@@ -109,7 +111,8 @@ myInput2.onkeyup = function () {
 
 function createNewUserAccount(event) {
   console.log(createUserAccount);
-
+  event.preventDefault();
+  event.stopPropagation();
   if (createUserAccount) {
     //Get value of the input fields
     let firstNameValue = firstNameInputBox.value;
@@ -141,8 +144,7 @@ function createNewUserAccount(event) {
       .then((json) => console.log(json))
       .catch((error) => console.error(error));
   } else {
-    event.preventDefault();
-    event.stopPropagation();
+    console.log("invalid user data");
   }
 }
 //Select the form
