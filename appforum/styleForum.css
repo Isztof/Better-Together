@@ -16,7 +16,8 @@ html {
   text-align: right;
   background-color: #5085a5;
 }
-#LRPanel a {
+#LRPanel a,
+#LI {
   max-width: 100px;
   color: white;
   font-size: 15px;

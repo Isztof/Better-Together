@@ -1,3 +1,4 @@
+/*
 //local storage transfer from log in
 // transfers sessionStorage from one tab to another
 var sessionStorage_transfer = function (event) {
@@ -33,8 +34,8 @@ if (!sessionStorage.length) {
 }
 
 console.log(sessionStorage.getItem("getSessionStorage"));
-
-let userName = sessionStorage.getItem("getSessionStorage");
+*/
+let userName = localStorage.getItem("getSessionStorage");
 
 // global selectors to get the input box for title, description and share button
 

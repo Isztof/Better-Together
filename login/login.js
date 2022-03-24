@@ -85,11 +85,11 @@ let button = form.submit.addEventListener("click", (e) => {
       if (data.length) {
         alert("You've been logged in successfully");
         window.open("/index.html");
-
-        sessionStorage.setItem("getSessionStorage", display_name.value);
+        localStorage.setItem("getSessionStorage", display_name.value);
         console.log(display_name.value);
-        console.log(sessionStorage.getItem("getSessionStorage"));
+
         // transfers sessionStorage from one tab to another
+        /*
         var sessionStorage_transfer = function (event) {
           if (!event) {
             event = window.event;
@@ -123,7 +123,7 @@ let button = form.submit.addEventListener("click", (e) => {
         if (!sessionStorage.length) {
           localStorage.setItem("getSessionStorage", "foobar");
           localStorage.removeItem("getSessionStorage", "foobar");
-        }
+        } */
       } else {
         alert("Error Password or Username"); /*displays error message*/
       }
