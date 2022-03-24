@@ -31,7 +31,7 @@ let button = form.submit.addEventListener("click", (e) => {
       console.log(data);
       if (data.length) {
         alert("You've been logged in successfully");
-        window.open("/index.html");
+        window.location.href = "/index.html";
         localStorage.setItem("getSessionStorage", display_name.value);
         console.log(display_name.value);
       } else {
