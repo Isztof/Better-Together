@@ -1,3 +1,4 @@
+/*
 //local storage transfer from log in
 // transfers sessionStorage from one tab to another
 var sessionStorage_transfer = function (event) {
@@ -33,7 +34,8 @@ if (!sessionStorage.length) {
 }
 
 console.log(sessionStorage.getItem("getSessionStorage"));
-// End of getting the local storage from log in
+// End of getting the local storage from log in */
+console.log(localStorage.getItem("getSessionStorage"));
 
 var id = 1;
 
@@ -231,20 +233,22 @@ console.log(dateStringWithTime); // Output: 2020-07-21 07:24:06
 // disable enable the display of the log out button
 const logOutB = document.querySelector("#LO");
 
-if (!sessionStorage.length) {
+if (!localStorage.length) {
   logOutB.style.display = "none";
 }
 
 logOutB.addEventListener("click", function () {
-  sessionStorage.removeItem("getSessionStorage");
+  localStorage.clear();
   alert("You have been logged out successfully");
   logOutB.style.display = "none";
+  logInB.style.display = "block";
+  logInB.classList.add("LI");
 });
 
 // disable enable the display of the log in button
 const logInB = document.querySelector("#LI");
 console.log(logInB);
 
-if (sessionStorage.length) {
+if (localStorage.length) {
   logInB.style.display = "none";
 }
