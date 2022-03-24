@@ -9,7 +9,10 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 exports.handler = async (event) => {
   let body2 = JSON.parse(event.body);
   console.log(body2);
-  const { user, session, error } = await supabase.auth.signUp(body2);
+  const { user, session, error } = await supabase.auth.signUp({
+    email: "mariuszseget77@gmail.com",
+    password: "Password1",
+  });
 
   if (error) {
     return {
