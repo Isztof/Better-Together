@@ -36,7 +36,7 @@ if (!sessionStorage.length) {
 console.log(sessionStorage.getItem("getSessionStorage"));
 // End of getting the local storage from log in */
 console.log(localStorage.getItem("getSessionStorage"));
-
+const userName2 = localStorage.getItem("getSessionStorage");
 var id = 1;
 
 // display comments saved in the database
@@ -132,8 +132,9 @@ async function getComments() {
         comment.className = "comment";
         let fetchedComment = item.comContent;
         let fetchedCommentDate = item.createdAt;
+        let fetchedCommentAuthor = item.userName;
         comment.innerHTML = `
-      <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
+      <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">${fetchedCommentAuthor}</span> </span>
       <div class="comDateTag"> ${fetchedCommentDate}</div> 
       <div class="commentText"> ${fetchedComment} </div> 
       `;
@@ -175,7 +176,7 @@ function addComment(element) {
   console.log(comDate);
   console.log(now);
   comment.innerHTML = `
-        <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">Mike Miller</span> </span>
+        <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">${userName2}</span> </span>
         <div class="comDateTag"> ${comDate}</div> 
         <div class="commentText"> ${inputValue} </div> 
       `;
@@ -185,7 +186,12 @@ function addComment(element) {
     var commentsSection = document.querySelector(`#${element} .comments`);
     commentsSection.appendChild(comment);
     let comArray = [
-      { createdAt: comDate, comContent: inputValue, postIdent: element },
+      {
+        createdAt: comDate,
+        comContent: inputValue,
+        postIdent: element,
+        userName: userName2,
+      },
     ];
     console.log(comArray);
     fetch("..//.netlify/functions/saveComments", {
