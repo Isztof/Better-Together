@@ -13,6 +13,7 @@ exports.handler = async (event) => {
     email: "mariuszseget77@gmail.com",
     password: "Password1",
   });
+  console.log(email, password)
 
   if (error) {
     return {
