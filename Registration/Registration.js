@@ -121,11 +121,13 @@ function createNewUserAccount(event) {
     let emailValue = emailInputBox.value;
     let passwordValue = passwordInputBox.value;
 
+    console.log(passwordValue);
+
     //Create an array out of the values an array
     const userObject = [
       {
         email: emailValue,
-        password: passwordValue,
+        password: "VeryHardPassword345",
       },
       {
         data: {
