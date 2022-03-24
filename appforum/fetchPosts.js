@@ -241,14 +241,16 @@ logOutB.addEventListener("click", function () {
   localStorage.clear();
   alert("You have been logged out successfully");
   logOutB.style.display = "none";
-  logInB.style.display = "block";
-  logInB.classList.add("LI");
+  logInB.style.display = "inline-block";
+  regB.style.display = "inline-block";
 });
 
-// disable enable the display of the log in button
+// disable enable the display of the log in  and register button
 const logInB = document.querySelector("#LI");
+const regB = document.querySelector("#R");
 console.log(logInB);
 
 if (localStorage.length) {
   logInB.style.display = "none";
+  regB.style.display = "none";
 }
