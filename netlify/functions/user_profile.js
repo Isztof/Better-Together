@@ -9,7 +9,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 exports.handler = async (event) => {
   let body2 = JSON.parse(event.body);
   console.log(body2);
-  const { data, error } = await supabase.from("User_Accounts").insert(body2);
+  const { user, session, error } = await supabase.auth.signUp(body2);
 
   if (error) {
     return {
