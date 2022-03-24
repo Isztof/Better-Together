@@ -150,7 +150,7 @@ function createNewUserAccount(event) {
         alert(
           "You've been successfully registered. You can now log in your new account"
         );
-        redirectToLogin();
+        //redirectToLogin();
       })
       .catch((error) => console.error(error));
   } else {
