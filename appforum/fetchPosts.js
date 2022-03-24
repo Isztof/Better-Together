@@ -15,6 +15,7 @@ async function getPosts() {
         let postDescription = item.content;
         let postTitle = item.title;
         let postDate = item.created_at;
+        let postAuthor = item.author;
         let frame = document.createElement("div");
         frame.className = "frame";
         frame.id = `post${id}`;
@@ -36,7 +37,7 @@ async function getPosts() {
                 <div class="authorDateTag">
                 <img class="picture" src="/imgs/50x50picture.png" alt="">
                 <!-- <div class="picture" ></div> -->
-                 <div class="authorTag">John Doe</div>
+                 <div class="authorTag">${postAuthor}</div>
                  <div class="dateTag">${postDate}</div>
                  <h4 class="noteTitle" > ${postTitle}</h4> 
                </div>
