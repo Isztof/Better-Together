@@ -20,8 +20,7 @@ html {
   text-align: right;
   background-color: #5085a5;
 }
-#LB,
-#RB {
+#LRPanel a {
   max-width: 100px;
   color: white;
   font-size: 15px;
