@@ -230,13 +230,12 @@ console.log(dateStringWithTime); // Output: 2020-07-21 07:24:06
 */
 // disable enable the display of the log out button
 const logOutB = document.querySelector("#LO");
-console.log(logInB);
 
 if (sessionStorage.length) {
   logOutB.style.display = "none";
 }
 
-logInB.addEventListener("click", function () {
+logOutB.addEventListener("click", function () {
   storage.removeItem("getSessionStorage");
   alert("You have been logged out successfully");
   logOutB.style.display = "none";
@@ -244,6 +243,7 @@ logInB.addEventListener("click", function () {
 
 // disable enable the display of the log in button
 const logInB = document.querySelector("#LI");
+console.log(logInB);
 
 if (!sessionStorage.length) {
   logInB.style.display = "none";
