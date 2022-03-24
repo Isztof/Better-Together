@@ -124,12 +124,10 @@ function createNewUserAccount(event) {
     console.log(passwordValue);
 
     //Create an array out of the values an array
-    const userObject = [
-      {
-        email: emailValue,
-        password: passwordValue,
-      },
-    ];
+    const userObject = {
+      email: emailValue,
+      password: passwordValue,
+    };
 
     //Create a new user account in supabase
     fetch("../.netlify/functions/user_profile", {
