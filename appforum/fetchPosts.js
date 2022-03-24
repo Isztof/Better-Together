@@ -231,7 +231,7 @@ console.log(dateStringWithTime); // Output: 2020-07-21 07:24:06
 // disable enable the display of the log out button
 const logOutB = document.querySelector("#LO");
 
-if (sessionStorage.length) {
+if (!sessionStorage.length) {
   logOutB.style.display = "none";
 }
 
@@ -245,6 +245,6 @@ logOutB.addEventListener("click", function () {
 const logInB = document.querySelector("#LI");
 console.log(logInB);
 
-if (!sessionStorage.length) {
+if (sessionStorage.length) {
   logInB.style.display = "none";
 }
