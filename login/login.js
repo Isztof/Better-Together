@@ -66,6 +66,8 @@ let button = form.submit.addEventListener("click", (e) => {
   e.preventDefault();
   const login = "https://bettter-together-net.netlify.app/login/login.html";
 
+  var saveUserInWebStorage = false;
+
   fetch("/.netlify/functions/getUserAccounts", {
     method: "POST",
     headers: {
@@ -82,9 +84,16 @@ let button = form.submit.addEventListener("click", (e) => {
       console.log(data);
       if (data.length) {
         alert("You've been logged in successfully");
-        window.open(
+        /* window.open(
           "/index.html"
-        ); /*opens the target page while Id & password matches*/
+        ); opens the target page while Id & password matches*/
+        //saveUserInWebStorage = true;
+        /*  const userDisplayName = {
+          name: form.email.value,
+        }; */
+        sessionStorage.setItem("admin", display_name.value);
+        console.log(display_name.value);
+        console.log(sessionStorage.getItem("admin"));
       } else {
         alert("Error Password or Username"); /*displays error message*/
       }
