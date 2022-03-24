@@ -1,3 +1,40 @@
+//local storage transfer from log in
+// transfers sessionStorage from one tab to another
+var sessionStorage_transfer = function (event) {
+  if (!event) {
+    event = window.event;
+  } // ie suq
+  if (!event.newValue) return; // do nothing if no value to work with
+  if (event.key == "getSessionStorage") {
+    // another tab asked for the sessionStorage -> send it
+    localStorage.setItem("sessionStorage", JSON.stringify(sessionStorage));
+    // the other tab should now have it, so we're done with it.
+    localStorage.removeItem("sessionStorage"); // <- could do short timeout as well.
+  } else if (event.key == "sessionStorage" && !sessionStorage.length) {
+    // another tab sent data <- get it
+    var data = JSON.parse(event.newValue);
+    for (var key in data) {
+      sessionStorage.setItem(key, data[key]);
+    }
+  }
+};
+
+// listen for changes to localStorage
+if (window.addEventListener) {
+  window.addEventListener("storage", sessionStorage_transfer, false);
+} else {
+  window.attachEvent("onstorage", sessionStorage_transfer);
+}
+
+// Ask other tabs for session storage (this is ONLY to trigger event)
+if (!sessionStorage.length) {
+  localStorage.setItem("getSessionStorage", "foobar");
+  localStorage.removeItem("getSessionStorage", "foobar");
+}
+
+console.log(sessionStorage.getItem("getSessionStorage"));
+// End of getting the local storage from log in
+
 var id = 1;
 
 // display comments saved in the database
@@ -52,7 +89,7 @@ async function getPosts() {
                 <div class="authorDateTag">
                 <img class="picture" src="/imgs/50x50picture.png" alt="">
                 <!-- <div class="picture" ></div> -->
-                 <div class="authorTag">John Doe</div>
+                 <div class="authorTag">${postAuthor}</div>
                  <div class="dateTag">${postDate}</div>
                  <h4 class="noteTitle" > ${postTitle}</h4> 
                </div>
@@ -191,3 +228,23 @@ console.log(dateString);
 
 console.log(dateStringWithTime); // Output: 2020-07-21 07:24:06
 */
+// disable enable the display of the log out button
+const logOutB = document.querySelector("#LO");
+console.log(logInB);
+
+if (sessionStorage.length) {
+  logOutB.style.display = "none";
+}
+
+logInB.addEventListener("click", function () {
+  storage.removeItem("getSessionStorage");
+  alert("You have been logged out successfully");
+  logOutB.style.display = "none";
+});
+
+// disable enable the display of the log in button
+const logInB = document.querySelector("#LI");
+
+if (!sessionStorage.length) {
+  logInB.style.display = "none";
+}
