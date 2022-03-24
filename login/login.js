@@ -83,6 +83,7 @@ let button = form.submit.addEventListener("click", (e) => {
     .then((data) => {
       console.log(data);
       if (data.length) {
+        alert("You've been logged in successfully");
         window.open("/index.html");
 
         sessionStorage.setItem("getSessionStorage", display_name.value);

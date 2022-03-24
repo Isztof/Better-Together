@@ -236,7 +236,7 @@ if (!sessionStorage.length) {
 }
 
 logOutB.addEventListener("click", function () {
-  storage.removeItem("getSessionStorage");
+  sessionStorage.removeItem("getSessionStorage");
   alert("You have been logged out successfully");
   logOutB.style.display = "none";
 });
