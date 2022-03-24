@@ -9,7 +9,7 @@ for (i = 0; i < myNodelist.length; i++) {
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
 }
-// if you aply these changes this block of code should work
+
 
 // Click on a close button to hide the current list item
 // I think the myExperience tabs are not deleted becaus you don't select them here
