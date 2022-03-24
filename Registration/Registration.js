@@ -127,14 +127,7 @@ function createNewUserAccount(event) {
     const userObject = [
       {
         email: emailValue,
-        password: "VeryHardPassword345",
-      },
-      {
-        data: {
-          display_name: userNameValue,
-          first_name: firstNameValue,
-          last_name: lastNameValue,
-        },
+        password: passwordValue,
       },
     ];
 
