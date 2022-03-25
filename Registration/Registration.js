@@ -121,13 +121,14 @@ function createNewUserAccount(event) {
     let emailValue = emailInputBox.value;
     let passwordValue = passwordInputBox.value;
 
-    console.log(passwordValue);
-
     //Create an array out of the values an array
     const userObject = [
       {
         email: emailValue,
         password: passwordValue,
+        firs_name: firstNameValue,
+        display_name: userNameValue,
+        last_name: lastNameValue,
       },
     ];
 
@@ -145,7 +146,7 @@ function createNewUserAccount(event) {
         alert(
           "You've been successfully registered. You can now log in your new account"
         );
-        //redirectToLogin();
+        redirectToLogin();
       })
       .catch((error) => console.error(error));
   } else {

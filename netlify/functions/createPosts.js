@@ -10,7 +10,6 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 exports.handler = async function (event, context) {
   // Insert a row
   const body = JSON.parse(event.body);
-  console.log(body);
   const { data, error } = await supabase.from("posts").insert(body);
 
   if (error) {
