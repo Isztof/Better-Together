@@ -143,43 +143,47 @@ function showPanel(element) {
 
 // adding new comments to the comment panel
 function addComment(element) {
-  var comment = document.createElement("div");
-  comment.className = "comment";
-  var comInput = document.querySelector(`#${element} .areaT`);
-  let inputValue = comInput.value;
-  var now = new Date();
-  var comDate = moment(now).format("LLL");
-  console.log(comDate);
-  console.log(now);
-  comment.innerHTML = `
-        <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">${userName2}</span> </span>
-        <div class="comDateTag"> ${comDate}</div> 
-        <div class="commentText"> ${inputValue} </div> 
-      `;
-  if (inputValue === "") {
-    alert("You cannot post an empty comment!");
+  if (localStorage.length) {
+    var comment = document.createElement("div");
+    comment.className = "comment";
+    var comInput = document.querySelector(`#${element} .areaT`);
+    let inputValue = comInput.value;
+    var now = new Date();
+    var comDate = moment(now).format("LLL");
+    console.log(comDate);
+    console.log(now);
+    comment.innerHTML = `
+          <span class="wide"><img class="picture" src="/imgs/50x50picture.png"> <span class="commentAuthor" onclick="HPprofile()">${userName2}</span> </span>
+          <div class="comDateTag"> ${comDate}</div> 
+          <div class="commentText"> ${inputValue} </div> 
+        `;
+    if (inputValue === "") {
+      alert("You cannot post an empty comment!");
+    } else {
+      var commentsSection = document.querySelector(`#${element} .comments`);
+      commentsSection.appendChild(comment);
+      let comArray = [
+        {
+          createdAt: comDate,
+          comContent: inputValue,
+          postIdent: element,
+          userName: localStorage.getItem("getSessionStorage"),
+        },
+      ];
+      console.log(comArray);
+      fetch("..//.netlify/functions/saveComments", {
+        method: "POST",
+        body: JSON.stringify(comArray),
+        headers: new Headers({
+          "Content-Type": "application/json",
+        }),
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json))
+        .catch((error) => console.error(error));
+    }
   } else {
-    var commentsSection = document.querySelector(`#${element} .comments`);
-    commentsSection.appendChild(comment);
-    let comArray = [
-      {
-        createdAt: comDate,
-        comContent: inputValue,
-        postIdent: element,
-        userName: localStorage.getItem("getSessionStorage"),
-      },
-    ];
-    console.log(comArray);
-    fetch("..//.netlify/functions/saveComments", {
-      method: "POST",
-      body: JSON.stringify(comArray),
-      headers: new Headers({
-        "Content-Type": "application/json",
-      }),
-    })
-      .then((response) => response.json())
-      .then((json) => console.log(json))
-      .catch((error) => console.error(error));
+    alert("You have log in first to comment a post");
   }
 }
 /* will be added once Ali completes this UI
