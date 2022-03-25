@@ -191,7 +191,7 @@ function addComment(element) {
         createdAt: comDate,
         comContent: inputValue,
         postIdent: element,
-        userName: userName2,
+        userName: localStorage.getItem("getSessionStorage"),
       },
     ];
     console.log(comArray);
