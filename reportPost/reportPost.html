@@ -18,7 +18,7 @@
       $("form").submit(function validateCheckboxes() {
         if ($('input:checkbox').filter(':checked').length < 1) {
           alert("Check at least one Checkbox!");
-          return false;
+          return alert("You need to check at least one checkbox");
         }
       });
     });
