@@ -14,7 +14,7 @@ body {
 main {
   margin: 0 auto;
   /* min-height: calc(100vh - 112px - 92,7); */
-  min-height: 100vh;
+  min-height: 150vh;
   background-color: #dfebe854;
   padding-left: 3.5em;
   padding-top: 2em;
