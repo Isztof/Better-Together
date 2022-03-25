@@ -124,11 +124,11 @@ function createNewUserAccount(event) {
     //Create an array out of the values an array
     const userObject = [
       {
+        display_name: userNameValue,
+        first_name: firstNameValue,
+        last_name: lastNameValue,
         email: emailValue,
         password: passwordValue,
-        firs_name: firstNameValue,
-        display_name: userNameValue,
-        last_name: lastNameValue,
       },
     ];
 
