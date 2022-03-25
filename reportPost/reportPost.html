@@ -14,11 +14,11 @@
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    jQuery(function ($) {
-      $('#report').submit(function (e) {
-        if ($(".chkbox:checked").length < 1) {
-          alert("Check at least one Checkbox!");
-          e.preventDefault();
+    $(document).ready(function () {
+      $("form").submit(function () {
+        if ($('input:checkbox').filter(':checked').length < 1) {
+          alert("Please Check at least one Check Box");
+          return false;
         }
       });
     });
