@@ -150,6 +150,7 @@ function addComment(element) {
     let inputValue = comInput.value;
     var now = new Date();
     var comDate = moment(now).format("LLL");
+    let userName2 = localStorage.getItem("getSessionStorage");
     console.log(comDate);
     console.log(now);
     comment.innerHTML = `
