@@ -135,7 +135,7 @@ function createNewUserAccount(event) {
     //Create a new user account in supabase
     fetch("../.netlify/functions/user_profile", {
       method: "POST",
-      // body: JSON.stringify(userObject),
+      body: JSON.stringify(userObject),
       headers: new Headers({
         "Content-Type": "application/json",
       }),
