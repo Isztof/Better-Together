@@ -19,7 +19,9 @@ html {
   text-decoration: none;
   padding: 0.5em;
 }
-
+h1 {
+  float: left;
+}
 body {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
