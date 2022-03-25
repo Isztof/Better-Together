@@ -128,6 +128,7 @@ async function getComments() {
     .then((response) => response.json())
     .then((json) => {
       json.forEach((item) => {
+        console.log(json);
         var comment = document.createElement("div");
         comment.className = "comment";
         let fetchedComment = item.comContent;
