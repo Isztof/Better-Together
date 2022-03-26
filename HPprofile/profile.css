@@ -39,8 +39,8 @@ main {
   padding-top: 6em;
   position: relative;
 }
-#LB,
-#RB {
+
+#LRPanel a {
   max-width: 100px;
   color: white;
   font-size: 15px;
@@ -198,4 +198,30 @@ input {
 
 .addBtn:hover {
   background-color: #bbb;
+}
+
+@media (max-width: 1000px) {
+  #profileHead {
+    height: 300px;
+    margin-bottom: 0px;
+  }
+  h1 {
+    width: 100%;
+    text-align: left;
+    font-size: xx-large;
+    padding-top: 30px;
+    margin-left: 0px;
+  }
+  img {
+    float: none;
+  }
+  #myInput,
+  #myInput2,
+  #myInput3 {
+    width: 80%;
+  }
+
+  .addBtn {
+    width: 20%;
+  }
 }
