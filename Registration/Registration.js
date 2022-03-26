@@ -109,8 +109,12 @@ myInput2.onkeyup = function () {
   }
 };
 
+// register as a health professional
+const registerAsHP = document.querySelector("#invalidCheck3");
+
 function createNewUserAccount(event) {
   console.log(createUserAccount);
+  console.log(registerAsHP.checked);
   event.preventDefault();
   event.stopPropagation();
   if (createUserAccount) {
@@ -129,6 +133,7 @@ function createNewUserAccount(event) {
         last_name: lastNameValue,
         email: emailValue,
         password: passwordValue,
+        isHP: registerAsHP.checked,
       },
     ];
 
