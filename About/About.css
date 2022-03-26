@@ -14,10 +14,11 @@ body {
 main {
   margin: 0 auto;
   /* min-height: calc(100vh - 112px - 92,7); */
-  min-height: 100vh;
+  min-height: 150vh;
   background-color: #dfebe854;
   padding-left: 3.5em;
   padding-top: 2em;
+  min-height: 200vh;
 }
 
 header {
@@ -30,11 +31,13 @@ h1 {
   font-weight: 700;
   margin: 4rem;
   padding-top: 30px;
+  font-size: small;
 }
 h2 {
   font-weight: 500;
   border-left: 5rem;
   margin: 2rem;
+  font-size: small;
 }
 
 h3 {

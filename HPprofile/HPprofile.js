@@ -10,7 +10,6 @@ for (i = 0; i < myNodelist.length; i++) {
   myNodelist[i].appendChild(span);
 }
 
-
 // Click on a close button to hide the current list item
 // I think the myExperience tabs are not deleted becaus you don't select them here
 console.log("close" + close); // By using the console log you can see what colums are you selecting so you can make sure that you are selecting the right
@@ -25,16 +24,6 @@ for (i = 0; i < close.length; i++) {
     console.log("parent element:" + div);
   };
 }
-// We don't need it. To me this won't fit to the purpose of this feature
-// Add a "checked" symbol when clicking on a list item
-/*
-  var list = document.querySelector('ul');
-  list.addEventListener('click', function (ev) {
-    if (ev.target.tagName === 'LI') {
-      ev.target.classList.toggle('checked');
-    }
-  }, false);
-  */
 
 var close;
 
@@ -68,6 +57,8 @@ function newElement() {
 }
 close = document.querySelectorAll("#myUL .close");
 
+const addEducationButton = document.querySelector("#addEducation");
+
 var close2;
 function newElement2() {
   var li = document.createElement("li");
@@ -95,3 +86,5 @@ function newElement2() {
     };
   }
 }
+
+addEducationButton.addEventListener("click", newElement2);
