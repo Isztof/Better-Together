@@ -183,15 +183,15 @@ function addComment(element) {
         .then((json) => console.log(json))
         .catch((error) => console.error(error));
     }
+    inputValue = "";
   } else {
     alert("You have log in first to comment a post");
   }
 }
-/* will be added once Ali completes this UI
+
 function HPprofile() {
   window.location.href = "/HPprofile/profile.html";
 }
-*/
 
 function reportUI() {
   window.location.href = "/reportPost/reportPost.html";
